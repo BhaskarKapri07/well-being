@@ -1,0 +1,47 @@
+[
+  {
+    "name": "ADHD",
+    "description": "With the right information, adults and children alike can learn to manage their ADHD symptoms.",
+    "imageName": "adhd.png"
+  },
+  {
+    "name": "Depression",
+    "description": "If you live with depression, you're not alone. Hope and help is available.",
+    "imageName": "depression.png"
+  },
+  {
+    "name": "Anxiety Disorders",
+    "description": "If you're concerned about your anxiety, there are tools that can help.",
+    "imageName": "anxiety.png"
+  },
+  {
+    "name": "Addictions",
+    "description": "Substance use disorder (SUD) and addictions are complex and challenging conditions. But recovery is possible with the right treatment plan.",
+    "imageName": "addiction.png"
+  },
+  {
+    "name": "Autism",
+    "description": "Within the autism spectrum, there is a range of support needs and tools.",
+    "imageName": "autism.png"
+  },
+  {
+    "name": "Bipolar",
+    "description": "When you find the right treatment plan, bipolar disorder can be managed.",
+    "imageName": "bipolar.png"
+  },
+  {
+    "name": "OCD",
+    "description": "OCD can cause intense feelings of stress or shame, but treatments can help.",
+    "imageName": "ocd.png"
+  },
+  {
+    "name": "PTSD",
+    "description": "PTSD is a complex mental health condition that's manageable with the right support.",
+    "imageName": "ptsd.png"
+  },
+  {
+    "name": "Schizophrenia",
+    "description": "Schizophrenia affects thoughts, feelings, and behaviors but you can still live well and thrive.",
+    "imageName": "schizophrenia.png"
+  }
+]
