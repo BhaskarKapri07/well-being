@@ -1,7 +1,29 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-    background-color: #f0f0f0;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #93dbc5;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-links a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.active-link {
+  font-weight: bold;
+}
+
+.navbar-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 150px;
+}
