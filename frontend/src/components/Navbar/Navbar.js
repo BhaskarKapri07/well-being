@@ -16,10 +16,9 @@ function Navbar() {
 
   const handleLogout = () => {
     // Implement your logout logic here, e.g., remove the token from local storage
-    // localStorage.removeItem("token");
-    // setLoggedIn(false);
-    // navigate("/login")
-    
+    localStorage.removeItem("token");
+    setLoggedIn(false);
+    navigate("/")
   };
 
 
