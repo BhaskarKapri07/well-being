@@ -18,9 +18,10 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegistrationPage />} />
-          <Route path="/help" element={<TalkToAnExpert/>} />
+          <Route path="/help" element={<TalkToAnExpert />} />
         </Routes>
       </main>
+
       <Footer />
     </Router>
   );
