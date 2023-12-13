@@ -2,13 +2,10 @@
 
 import React from "react"
 import "./JournalPage.css"
-import JournalNote from "./JournalNote"
+import JournalNote from "../../components/JournalNote/JournalNote"
 import journalArt from "../../assets/images/journal-art.jpg"
 
-
-
-const JournalPage = () => {
-    
+const JournalPage = () => {    
     const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
     const journalQuotes = [
         "Take a moment to reflect on your day. What are you grateful for? What challenges did you face?",
@@ -56,8 +53,8 @@ const JournalPage = () => {
     
 
 
-        const weekDatesElements = weekDates.map(date => {
-            return  <div className={ date.day === todayDate.day ?  "single-day-container today-date" : "single-day-container"}>
+        const weekDatesElements = weekDates.map((date,index) => {
+            return  <div key={index} className={ date.day === todayDate.day ?  "single-day-container today-date" : "single-day-container"}>
                     <p>{ days[date.day]}</p>
                     <p>{date.date}-{date.month}-{date.year}</p>
                     </div>

@@ -1,0 +1,71 @@
+.meditation-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+
+.main-meditation-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 40%;
+}
+
+.main-meditation-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.meditation-quote {
+  font-size: 32px;
+  font-style: italic;
+  text-align: center;
+  border-left: 4px solid #ccc;
+  padding: 10px;
+  color: #141414;
+}
+
+.meditation-cards {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.meditation-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-decoration: none; /* Remove link styling */
+  color: inherit; /* Inherit text color */
+}
+
+.card-image {
+  width: 100px; /* Adjust as needed */
+  height: auto;
+  border-radius: 8px;
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .meditation-container {
+    flex-direction: column;
+  }
+
+  .main-meditation-area {
+    max-width: 100%;
+  }
+
+  .meditation-cards {
+    width: 100%;
+  }
+}

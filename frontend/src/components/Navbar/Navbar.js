@@ -1,9 +1,27 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import "./Navbar.css";
 
+
 function Navbar() {
+
+  const [loggedIn,setLoggedIn] = React.useState(false)
+  const navigate = useNavigate()
+
+  React.useEffect(()=>{
+    const token = localStorage.getItem("token")
+    setLoggedIn(!!token)
+  },[])
+
+  const handleLogout = () => {
+    // Implement your logout logic here, e.g., remove the token from local storage
+    localStorage.removeItem("token");
+    setLoggedIn(false);
+    navigate("/")
+  };
+
+
   return (
     <nav className="navbar">
       <NavLink to="/">
@@ -14,7 +32,7 @@ function Navbar() {
         <NavLink to="/resources">Resources</NavLink>
         <NavLink to="/journal">Journal</NavLink>
         <NavLink to="/help">Talk to an Expert</NavLink>
-        <NavLink to="/login">LogIn</NavLink>
+        {loggedIn ? <NavLink onClick={handleLogout}>LogOut</NavLink> : <NavLink to="/login">LogIn</NavLink> }
       </div>
     </nav>
   );

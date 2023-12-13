@@ -26,11 +26,12 @@ function LoginPage() {
       );
       console.log("Login successful:", response.data);
       localStorage.setItem("token", response.data.token);
-
-      setInterval(() => {
-        // something to display here
-        navigate("/");
-      }, 1000);
+      navigate("/")
+      window.location.reload()
+      // setInterval(() => {
+      //   // something to display here
+      //   navigate("/");
+      // }, 1000);
     } catch (error) {
       console.error(
         "Login error:",
@@ -54,7 +55,7 @@ function LoginPage() {
           placeholder="Email"
           value={loginData.email}
           onChange={handleChange}
-          required
+          required autoComplete="current-email"
         />
         <input
           type="password"
@@ -62,7 +63,7 @@ function LoginPage() {
           placeholder="Password"
           value={loginData.password}
           onChange={handleChange}
-          required
+          required autoComplete="current-password"
         />
         <button type="submit">Log In</button>
         <p className="register-link">

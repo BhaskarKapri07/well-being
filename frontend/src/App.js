@@ -7,9 +7,12 @@ import HomePage from "./Pages/HomePage/HomePage";
 import LoginPage from "./Pages/LoginPage/LoginPage";
 import RegistrationPage from "./Pages/RegistrationPage/RegistrationPage";
 import TalkToAnExpert from "./Pages/TalkToAnExpert/TalkToAnExpert";
-import ResourcesPage from "./Pages/ResourcePage/ResourcePage"
-import JournalPage from "./Pages/JournalPage/JournalPage"
+import ResourcesPage from "./Pages/ResourcePage/ResourcePage";
+import JournalPage from "./Pages/JournalPage/JournalPage";
 import ConditionDetailPage from "./Pages/ConditionDetailPage/ConditionDetailPage";
+import MeditationDetailPage from "./Pages/MeditationDetailPage/MeditationDetailPage";
+import EveryEntry from "./components/EveryEntry/EveryEntry";
+import SingleNote from "./components/SingleNote/SingleNote";
 
 function App() {
   return (
@@ -24,10 +27,16 @@ function App() {
           <Route path="/help" element={<TalkToAnExpert />} />
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/journal" element={<JournalPage />} />
+          <Route path="/journal/allNotes" element={<EveryEntry />} />
           <Route
             path="/condition/:conditionId"
             element={<ConditionDetailPage />}
           />
+          <Route 
+            path="/journal/allNotes/:noteId"
+            element={<SingleNote/>}
+          />
+          <Route path="/:meditationTitle" element={<MeditationDetailPage />} />
         </Routes>
       </main>
 
