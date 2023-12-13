@@ -1,6 +1,6 @@
 import React from "react";
 import "./HeroSection.css";
-import landscapeImage from "../../assets/images/journalv4.jpg";
+import landscapeImage from "../../assets/images/bulbInBrain.jpg";
 
 function HeroSection() {
   return (

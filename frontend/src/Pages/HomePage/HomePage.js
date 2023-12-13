@@ -3,7 +3,6 @@ import "./HomePage.css";
 import HeroSection from "../../components/HeroSection/HeroSection";
 import CategoriesSection from "../../components/CategoriesSection/CategoriesSection";
 import JournalingSection from "../../components/JournalingSection/JournalingSection";
-import MeditationSection from "../../components/MeditationSection/MeditationSection"
 
 function HomePage() {
   return (
@@ -11,7 +10,6 @@ function HomePage() {
       <HeroSection />
       <CategoriesSection />
       <JournalingSection />
-      <MeditationSection />
 
     </div>
   );

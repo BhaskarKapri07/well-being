@@ -20,17 +20,15 @@
 }
 
 .hero-quote p {
-  font-size: 32px;
+  font-size: 24px;
   margin-bottom: 10px;
 }
 
 .hero-quote span {
   font-style: italic;
-  font-size: 24px;
 }
 
 .hero-image {
   flex-basis: 40%;
   height: auto;
-  width: 50%;
 }

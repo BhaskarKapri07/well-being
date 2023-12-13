@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./JournalingSection.css";
-import journalingImage from "../../assets/images/journalv2.jpg";
+import journalingImage from "../../assets/images/well_being.png";
 
 function JournalingSection() {
   const navigate = useNavigate();

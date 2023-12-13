@@ -2,45 +2,12 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import axios from "axios"
 import "./ConditionDetailPage.css"
-import adhdBanner from  "../../assets/images/adhd-banner.jpg"
-import depressionBanner from  "../../assets/images/depression-banner.jpg"
-import anxietyBanner from  "../../assets/images/anxiety-banner.jpg"
-import bipolarBanner from  "../../assets/images/bipolar-banner.jpg"
-import autismBanner from  "../../assets/images/autism-banner.jpg"
-import schizophreniaBanner from  "../../assets/images/schizophrenia-banner.avif"
-import ptsdBanner from  "../../assets/images/ptsd-banner.jpg"
-import addictionBanner from  "../../assets/images/addiction-banner.jpg"
-import ocdBanner from  "../../assets/images/ocd-banner.jpg"
+import banner from  "../../assets/images/banner.jpg"
 
 function ConditionDetailPage() {
   const { conditionId } = useParams();
 
   const [resourceData,setResourceData] = React.useState([])
-
-  const getImage = conditionId => {
-    switch (conditionId) {
-      case "ADHD":
-        return adhdBanner;
-      case "Anxiety Disorders":
-        return anxietyBanner;
-      case "Depression":
-        return depressionBanner;
-      case "Bipolar":
-        return bipolarBanner;
-      case "Schizophrenia":
-        return schizophreniaBanner;
-      case "Autism":
-        return autismBanner;
-      case "Addiction":
-          return addictionBanner ;
-      case "OCD":
-        return ocdBanner;
-      case "PTSD":
-        return ptsdBanner;
-      default:
-        return adhdBanner; // Handle unknown conditions
-    }
-  };
 
   React.useEffect(()=> {
     axios.get("http://localhost:3001/mockADHDData")
@@ -67,7 +34,7 @@ function ConditionDetailPage() {
   return (
     <div>
       
-      <img src={getImage(conditionId)} alt="resource-banner" className='resource-banner'/>
+      <img src={banner} alt="resource-banner" className='resource-banner'/>
       <div className='resources-container'>
       {resourceElements}
       </div>
