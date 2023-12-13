@@ -1,0 +1,34 @@
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  color: black;
+  padding: 20px;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hero-quote {
+  flex-basis: 50%;
+  margin-right: 20px;
+}
+
+.hero-quote p {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.hero-quote span {
+  font-style: italic;
+}
+
+.hero-image {
+  flex-basis: 40%;
+  height: auto;
+}

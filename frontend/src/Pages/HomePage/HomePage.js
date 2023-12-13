@@ -1,10 +1,13 @@
-import React from 'react';
-import './HomePage.css';
+import React from "react";
+import "./HomePage.css";
+import HeroSection from "../../components/HeroSection/HeroSection";
+import CategoriesSection from "../../components/CategoriesSection/CategoriesSection";
 
 function HomePage() {
   return (
     <div className="home-page">
-      <h1>Welcome to the Mental Well-being Site</h1>
+      <HeroSection />
+      <CategoriesSection />
     </div>
   );
 }
