@@ -1,0 +1,72 @@
+@host = http://localhost:3001
+@token = # JWT token from login response
+
+
+
+### User Registration
+POST {{host}}/api/users/register
+Content-Type: application/json
+
+{
+    "username": "newuser",
+    "email": "newuser@example.com",
+    "password": "password123"
+}
+
+
+
+### User Login
+POST {{host}}/api/users/login
+Content-Type: application/json
+
+{
+    "email": "newuser@example.com",
+    "password": "password123"
+}
+
+
+
+### Create Journal Entry
+POST {{host}}/api/journals
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "title": "My Journal Entry",
+    "content": "Today I learned about huehue."
+}
+
+
+
+### Get All Journal Entries
+GET {{host}}/api/journals
+Authorization: Bearer {{token}}
+
+
+
+### Get Journal Entry by ID
+# Replace ':id' with an actual entry ID
+GET {{host}}/api/journals/:id
+Authorization: Bearer {{token}}
+
+
+
+### Update Journal Entry
+# Replace ':id' with an actual entry ID
+PUT {{host}}/api/journals/:id
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "title": "Updated Journal Entry",
+    "content": "Today I explored more about Node.js."
+}
+
+
+
+### Delete Journal Entry
+# Replace ':id' with an actual entry ID
+DELETE {{host}}/api/journals/:id
+Authorization: Bearer {{token}}
+
+
