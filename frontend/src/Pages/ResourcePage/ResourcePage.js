@@ -9,6 +9,10 @@ import depressionImage from "../../assets/images/depression.png";
 import addictionImage from "../../assets/images/addiction.png";
 import ptsdImage from "../../assets/images/ptsd.png";
 import autismImage from "../../assets/images/autism.png";
+import schizImage from "../../assets/images/schiz.jpg";
+import ocdImage from "../../assets/images/ocd.jpg";
+import bipolarImage from "../../assets/images/bipolar.jpg"
+
 
 function ResourcesPage() {
   const navigate = useNavigate();
@@ -19,6 +23,9 @@ function ResourcesPage() {
     "addiction.png": addictionImage,
     "ptsd.png": ptsdImage,
     "autism.png": autismImage,
+    "schizophrenia.png":schizImage,
+    "ocd.png":ocdImage,
+    "bipolar.png":bipolarImage
   };
 
   const handleReadMoreClick = (conditionName) => {

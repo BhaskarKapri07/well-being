@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './LoginPage.css';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./LoginPage.css";
+import axios from "axios";
 
 function LoginPage() {
   const [loginData, setLoginData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
   const navigate = useNavigate();
 
@@ -15,12 +16,33 @@ function LoginPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // backend logic
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/api/users/login",
+        {
+          email: loginData.email,
+          password: loginData.password,
+        }
+      );
+      console.log("Login successful:", response.data);
+      localStorage.setItem("token", response.data.token);
+      navigate("/")
+      window.location.reload()
+      // setInterval(() => {
+      //   // something to display here
+      //   navigate("/");
+      // }, 1000);
+    } catch (error) {
+      console.error(
+        "Login error:",
+        error.response ? error.response.data : error
+      );
+    }
     console.log(loginData);
   };
 
   const handleRegisterRedirect = () => {
-    navigate('/register'); 
+    navigate("/register");
   };
 
   return (
@@ -33,7 +55,7 @@ function LoginPage() {
           placeholder="Email"
           value={loginData.email}
           onChange={handleChange}
-          required
+          required autoComplete="current-email"
         />
         <input
           type="password"
@@ -41,11 +63,12 @@ function LoginPage() {
           placeholder="Password"
           value={loginData.password}
           onChange={handleChange}
-          required
+          required autoComplete="current-password"
         />
         <button type="submit">Log In</button>
         <p className="register-link">
-          Don't have an account? <span onClick={handleRegisterRedirect}>Register here</span>
+          Don't have an account?{" "}
+          <span onClick={handleRegisterRedirect}>Register here</span>
         </p>
       </form>
     </div>

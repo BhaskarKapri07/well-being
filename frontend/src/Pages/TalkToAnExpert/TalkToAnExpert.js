@@ -18,7 +18,7 @@ const TalkToAnExpert = () => {
       });
     });
 
-    axios.get("http://localhost:8000/mockData")
+    axios.get("http://localhost:3001/mockTherapistData")
     .then((response) => {
       setTherapistsData(JSON.parse(response.data.data).results);
       setShowData(true)

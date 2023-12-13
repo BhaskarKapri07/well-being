@@ -8,8 +8,8 @@ POST {{host}}/api/users/register
 Content-Type: application/json
 
 {
-    "username": "newuser",
-    "email": "newuser@example.com",
+    "username": "newuser3",
+    "email": "newuser3@example.com",
     "password": "password123"
 }
 
@@ -20,14 +20,14 @@ POST {{host}}/api/users/login
 Content-Type: application/json
 
 {
-    "email": "newuser@example.com",
+    "email": "newuser3@example.com",
     "password": "password123"
 }
 
 
 
 ### Create Journal Entry
-POST {{host}}/api/journals
+POST {{host}}/api/journal
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
@@ -39,21 +39,21 @@ Authorization: Bearer {{token}}
 
 
 ### Get All Journal Entries
-GET {{host}}/api/journals
+GET {{host}}/api/journal
 Authorization: Bearer {{token}}
 
 
 
 ### Get Journal Entry by ID
 # Replace ':id' with an actual entry ID
-GET {{host}}/api/journals/:id
+GET {{host}}/api/journal/:id
 Authorization: Bearer {{token}}
 
 
 
 ### Update Journal Entry
 # Replace ':id' with an actual entry ID
-PUT {{host}}/api/journals/:id
+PUT {{host}}/api/journal/:id
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
@@ -66,7 +66,7 @@ Authorization: Bearer {{token}}
 
 ### Delete Journal Entry
 # Replace ':id' with an actual entry ID
-DELETE {{host}}/api/journals/:id
+DELETE {{host}}/api/journal/:id
 Authorization: Bearer {{token}}
 
 
