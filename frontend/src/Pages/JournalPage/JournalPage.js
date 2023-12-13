@@ -7,23 +7,23 @@ import JournalNote from "./JournalNote"
 const JournalPage = () => {
     
     const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
-    const [todayDate,setTodayDate] = React.useState({})
-    const [weekDates,setWeekDates] =  React.useState()
+    const [todayDate,setTodayDate] = React.useState({
+        date: new Date().getDate(),
+        day:new Date().getDay(),
+        month:new Date().getMonth(),
+        year:new Date().getFullYear()
+    })
+    const [weekDates,setWeekDates] =  React.useState([])
 
     React.useEffect( () => {
         const today = new Date()
-        setTodayDate({
-            date: today.getDate(),
-            day:today.getDay(),
-            month:today.getMonth(),
-            year:today.getFullYear()
-        })
+ 
         
         const arr = []; 
 
         for (let i = -3; i <= 3; i++) {
             const newDate = new Date(today.getTime());
-            if(i==0){
+            if(i===0){
                 arr.push(todayDate)
                 continue
             }
