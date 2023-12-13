@@ -1,0 +1,49 @@
+[
+  {
+    "name": "Mindfulness Meditation",
+    "description": "Mindfulness meditation encourages the practitioner to observe wandering thoughts as they drift through the mind. The intention is not to get involved with the thoughts or to judge them, but simply to be aware of each mental note as it arises. Through mindfulness meditation, you can see how your thoughts and feelings tend to move in particular patterns. Over time, you can become more aware of the human tendency to quickly judge an experience as good or bad, pleasant or unpleasant. With practice, an inner balance develops.",
+    "image": "mindfulMeditation.avif",
+    "resources": [
+      "https://www.youtube.com/embed/ssss7V1_eyA?si=bVIsZHoTVRuPo1ub",
+      "https://www.youtube.com/embed/ZVcQXX7fmFI?si=cUukvwhwUiElBNiV",
+      "https://www.youtube.com/embed/DPjB-1OCUMA?si=Odh9i3k3Pfp29BmP"
+    ]
+  },
+  {
+    "name": "Spiritual Meditation",
+    "description": "Spiritual meditation is used in Eastern religions, such as Hinduism and Daoism, and in Christian faith. It’s similar to prayer in that you reflect on the silence around you and seek a deeper connection with your God or Universe. Essential oils are commonly used to heighten the spiritual experience. Popular options include frankincense, myrrh, sage, cedar, sandalwood, and palo santo. Spiritual meditation can be practiced at home or in a place of worship. This practice is beneficial for those who thrive in silence and seek spiritual growth.",
+    "image": "SpritualMeditation.jpg",
+    "resources": [
+      "https://www.youtube.com/embed/G0QdWOcB6Ho?si=s7EcqZqYjDIs3sTR",
+      "https://www.youtube.com/embed/OOq1qfB2RgQ?si=81tWMCemxSdFiVBm"
+    ]
+  },
+  {
+    "name": "Focused Meditation",
+    "description": "Focused meditation involves concentration using any of the five senses. For example, you can focus on something internal, like your breath, or bring in external influences to help focus your attention. This practice may seem simple in theory, but it can be challenging for beginners to hold their focus for longer than a few minutes at first. If your mind does wander, it's important not to get frustrated; instead, gently bring your focus back to the chosen object of attention. Listening to gongs or counting beads are ways to keep the focus.",
+    "image": "focusedMeditation.jpg",
+    "resources": [
+      "https://www.youtube.com/embed/ACHHe0yFlw4?si=jM2rirmE3TLBnBgh",
+      "https://www.youtube.com/embed/4Nw8EmF-DqE?si=5mmA4YiC57fO7kHA"
+    ]
+  },
+  {
+    "name": "Movement Meditation",
+    "description": "Although most people think of yoga when they hear movement meditation, this practice may include walking through the woods, gardening, qigong, and other gentle forms of motion. It’s an active form of meditation where the movement guides you. Movement meditation is good for people who find peace in action and prefer to let their minds wander. This type of meditation is less about stillness and more about finding mindfulness and awareness in movement.",
+    "image": "movementMeditation.jpg",
+    "resources": [
+      "https://www.youtube.com/embed/xa4ODaKKchI?si=rTYyXadUZPixiAk_",
+      "https://www.youtube.com/embed/SkyYu4zz-vQ?si=_0RiugpFrsgAiSsc"
+    ]
+  },
+  {
+    "name": "Mantra Meditation",
+    "description": "Mantra meditation is prominent in many teachings, including Hindu and Buddhist traditions. This type of meditation uses a repetitive sound to clear the mind. It can be a word, phrase, or sound, such as the popular 'Om.' It doesn’t matter if your mantra is spoken loudly or quietly. After chanting the mantra for some time, you’ll be more alert and in tune with your environment. This allows you to experience deeper levels of awareness. Some people enjoy mantra meditation because they find it easier to focus on a word than on their breath. This is also a good practice for people who don’t like silence and enjoy repetition.",
+    "image": "mantraMeditation.jpg",
+    "resources": [
+      "https://www.youtube.com/embed/vH11undyI2o?si=fU46b1KrCs49MtXT",
+      "https://www.youtube.com/embed/8sYK7lm3UKg?si=Ig89VW11qJ34_OPN",
+      "https://www.youtube.com/embed/NmAHY_tg9Es?si=k5pGLIX3lbfA2XDW"
+    ]
+  }
+]

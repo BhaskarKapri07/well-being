@@ -15,7 +15,7 @@ function ResourcesPage() {
   const images = {
     "adhd.png": adhdImage,
     "anxiety.png": anxietyImage,
-    "depression.png": depressionImage,
+    "depression.png": depressionImage, 
     "addiction.png": addictionImage,
     "ptsd.png": ptsdImage,
     "autism.png": autismImage,

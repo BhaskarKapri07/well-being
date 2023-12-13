@@ -7,9 +7,10 @@ import HomePage from "./Pages/HomePage/HomePage";
 import LoginPage from "./Pages/LoginPage/LoginPage";
 import RegistrationPage from "./Pages/RegistrationPage/RegistrationPage";
 import TalkToAnExpert from "./Pages/TalkToAnExpert/TalkToAnExpert";
-import ResourcesPage from "./Pages/ResourcePage/ResourcePage"
-import JournalPage from "./Pages/JournalPage/JournalPage"
+import ResourcesPage from "./Pages/ResourcePage/ResourcePage";
+import JournalPage from "./Pages/JournalPage/JournalPage";
 import ConditionDetailPage from "./Pages/ConditionDetailPage/ConditionDetailPage";
+import MeditationDetailPage from "./Pages/MeditationDetailPage/MeditationDetailPage";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             path="/condition/:conditionId"
             element={<ConditionDetailPage />}
           />
+          <Route path="/:meditationTitle" element={<MeditationDetailPage />} />
         </Routes>
       </main>
 
