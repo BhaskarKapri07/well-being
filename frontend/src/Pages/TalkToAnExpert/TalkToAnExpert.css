@@ -28,3 +28,39 @@
 .location-logo {
     height: auto;
 }
+
+.single-therapist-container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .therapist-clinic-name {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .therapist-vicinity {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 8px;
+  }
+  
+  .open-or-close {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #4caf50; /* Green for open, adjust color as needed */
+  }
+  
+  .therapists-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Adjust as needed for spacing */
+    padding: 20px;
+    background-color: #f8f8f8; /* Adjust background color as needed */
+  }
+  
