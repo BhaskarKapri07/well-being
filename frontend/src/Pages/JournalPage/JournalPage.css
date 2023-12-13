@@ -1,0 +1,42 @@
+/* Style for the week days container */
+.week-days-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  /* Style for single day container */
+  .single-day-container {
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for today's date */
+  .today-date {
+    background-color: #93dbc5; /* Green color for today's date, adjust as needed */
+    color: #fff;
+  }
+  
+  /* Additional styling for the text content within the day container */
+  .single-day-container p {
+    margin: 0; /* Remove default margin */
+  }
+  
+  /* Style for the JournalNote component */
+  /* Adjust the styling based on your JournalNote component structure */
+  .journal-note-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+  }
+  
+  /* Add any additional styling for your JournalNote component elements */
+  
