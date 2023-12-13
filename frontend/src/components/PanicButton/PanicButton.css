@@ -1,12 +1,53 @@
 .panic-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 1rem;
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #f00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.calming-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(-45deg, #e3ffe7, #d9e7ff, #ffd1ff, #ffafbd);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%}
+  25% {background-position: 100% 50%}
+  50% {background-position: 100% 50%}
+  75% {background-position: 0% 50%}
+  100% {background-position: 0% 50%}
+}
+
+@keyframes fadeIn {
+  to {opacity: 1;}
+}
+
+.calming-message {
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+  padding: 20px;
+  max-width: 600px;
+  line-height: 1.6;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
