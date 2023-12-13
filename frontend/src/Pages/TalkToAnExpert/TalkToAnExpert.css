@@ -1,0 +1,30 @@
+
+
+.talk-to-expert-container {
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+
+.permission-btn {
+    background-color: #007bff; /* Adjust the background color */
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    outline:none;
+    margin-bottom: 10px;
+}
+
+.permission-btn:hover {
+    background-color: #0056b3;
+}
+
+.location-logo {
+    height: auto;
+}

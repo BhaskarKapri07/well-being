@@ -6,6 +6,7 @@ import PanicButton from "./components/PanicButton/PanicButton";
 import HomePage from "./Pages/HomePage/HomePage";
 import LoginPage from "./Pages/LoginPage/LoginPage";
 import RegistrationPage from "./Pages/RegistrationPage/RegistrationPage";
+import TalkToAnExpert from "./Pages/TalkToAnExpert/TalkToAnExpert";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/help" element={<TalkToAnExpert/>} />
         </Routes>
       </main>
       <Footer />

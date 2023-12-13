@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './PanicButton.css';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "./PanicButton.css";
 
 function PanicButton() {
   const [showOverlay, setShowOverlay] = useState(false);
@@ -17,21 +17,27 @@ function PanicButton() {
     "Visualize a place where you feel calm and safe...",
     "Remember, you are valued and strong...",
     "Breathe in peace, breathe out stress...",
-    "You're doing great, one step at a time..."
+    "You're doing great, one step at a time...",
   ];
 
   useEffect(() => {
+    let timer;
     if (showOverlay && currentMessageIndex < messages.length) {
-      const timer = setTimeout(() => {
+      timer = setTimeout(() => {
         setCurrentMessageIndex(currentMessageIndex + 1);
       }, 4000); // Each message displays for 4 seconds
-
-      return () => clearTimeout(timer);
-    } else if (currentMessageIndex === messages.length) {
-      setShowOverlay(false);
-      navigate('/help');
     }
-  }, [showOverlay, currentMessageIndex, navigate, messages.length]);
+
+    return () => clearTimeout(timer);
+  }, [showOverlay, currentMessageIndex, messages.length]);
+
+  useEffect(() => {
+    if (currentMessageIndex === messages.length) {
+      setShowOverlay(false);
+      setCurrentMessageIndex(0);
+      setTimeout(() => navigate("/help"), 500); // Delaying navigation
+    }
+  }, [currentMessageIndex, navigate, messages.length]);
 
   const handlePanicClick = () => {
     setShowOverlay(true);
