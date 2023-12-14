@@ -6,23 +6,34 @@ import "./TalkToAnExpert.css";
 
 
 
+
 const TalkToAnExpert = () => {
-  const [userLocation, setUserLocation] = React.useState({});
+  
   const [therapistsData, setTherapistsData] = React.useState([]);
   const [showData,setShowData] = React.useState(false)
   
   
   const userToken = localStorage.getItem("token")
-  const handleClick = () => {
-    
-    navigator.geolocation.getCurrentPosition((position) => {
-      setUserLocation({
+  const handleClick = async() => {
+    let location = {}
+    // console.log("before fetching")
+    await navigator.geolocation.getCurrentPosition((position) => {
+      location = {
         latitude: position.coords.latitude,
         longitude: position.coords.longitude,
-      });
+      };
+      // console.log("After updating")
     });
 
+    // console.log("After use await api")
+    setTimeout(()=>{
+        
+        fetchTherapists(location)
+    },"2000")
+  };
 
+  const fetchTherapists = (location) => {
+    
     const requestOptions = {
       method: 'post',
       url: `http://localhost:3001/therapistData`,
@@ -30,10 +41,11 @@ const TalkToAnExpert = () => {
         'Content-Type': 'application/json',
       },
       data: {
-        latitude: userLocation.latitude,
-        longitude: userLocation.longitude
+        latitude: location.latitude,
+        longitude: location.longitude
       }
     };  
+
 
     axios(requestOptions)
       .then(response => {
@@ -43,8 +55,7 @@ const TalkToAnExpert = () => {
       })
       .catch(error => console.error(error));
     
-  };
-
+  }
 
   const therapistsDataElements = therapistsData.map((data,index) => {
     
