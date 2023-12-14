@@ -11,7 +11,7 @@ import ResourcesPage from "./Pages/ResourcePage/ResourcePage";
 import JournalPage from "./Pages/JournalPage/JournalPage";
 import ConditionDetailPage from "./Pages/ConditionDetailPage/ConditionDetailPage";
 import MeditationDetailPage from "./Pages/MeditationDetailPage/MeditationDetailPage";
-import HelpPage from "./Pages/HelpPage/HelpPage";
+
 import EveryEntry from "./components/EveryEntry/EveryEntry";
 import SingleNote from "./components/SingleNote/SingleNote";
 import PageNotFound from "./components/PageNotFound/PageNotFound";

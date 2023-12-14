@@ -9,6 +9,7 @@ import TherapySection from "../../components/TherapySection/TherapySection"
 
 
 function HomePage() {
+   // Render each section of the homepage
   return (
     <div className="home-page">
       <HeroSection />

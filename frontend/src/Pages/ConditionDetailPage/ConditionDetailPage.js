@@ -2,6 +2,8 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import axios from "axios"
 import "./ConditionDetailPage.css"
+
+// Import images for different conditions
 import adhdBanner from  "../../assets/images/adhd-banner.jpg"
 import depressionBanner from  "../../assets/images/depression-banner.jpg"
 import anxietyBanner from  "../../assets/images/anxiety-banner.jpg"
@@ -13,10 +15,13 @@ import addictionBanner from  "../../assets/images/addiction-banner.jpg"
 import ocdBanner from  "../../assets/images/ocd-banner.jpg"
 
 function ConditionDetailPage() {
+  // Get condition ID from URL parameter
   const { conditionId } = useParams();
 
+  // State variable to store resources data
   const [resourceData,setResourceData] = React.useState([])
 
+  // Function to choose the appropriate image based on condition ID
   const getImage = conditionId => {
     switch (conditionId) {
       case "ADHD":
@@ -42,8 +47,8 @@ function ConditionDetailPage() {
     }
   };
 
+   // Fetch resources data on component mount
   React.useEffect(()=> {
-
     const requestOptions = {
       method: 'post',
       url: `https://well-being.onrender.com/getResources`,
@@ -65,7 +70,7 @@ function ConditionDetailPage() {
   },[])
 
 
-
+// Generate resource elements
   const resourceElements = resourceData.map(data => {
    return  <div className='single-resource-container' >
       <h1 className='resource-title'>{data.title}</h1>
