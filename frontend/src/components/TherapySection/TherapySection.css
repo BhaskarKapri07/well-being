@@ -1,56 +1,70 @@
-
-
+/* Therapy Section Styles */
 .therapy-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2em 0;
+  background: url("../../assets/images/texture5.jpg");
+}
+
+/* Therapy Image */
+.therapy-image {
+  flex: 1;
+  max-width: 40%; /* Control image size */
+  margin-right: 20px; /* Space between image and text */
+}
+
+.therapy-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Soften the image edges */
+}
+
+/* Therapy Text */
+.therapy-text {
+  flex: 1;
+  max-width: 50%; /* Control text width */
+  font-size: 1.7em; /* Adjust font size as needed */
+  color: #333333; /* Consistent text color */
+  text-align: left; /* Align text to the left */
+  font-style: italic;
+}
+
+.therapy-text p {
+  margin-bottom: 1em; /* Space between paragraph and button */
+}
+
+/* Therapy Button */
+.therapy-text button {
+  background-color: #0077b6; /* Button color consistent with theme */
+  color: white;
+  border: none;
+  padding: 0.75em 1.5em;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.therapy-text button:hover {
+  background-color: #005f73; /* Darker shade on hover */
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .therapy-section {
+    flex-direction: column;
+    text-align: center;
   }
-  
+
+  .therapy-image,
   .therapy-text {
-    flex: 1;
-    text-align: left;
+    max-width: 100%;
+    margin-right: 0;
   }
-  
-  .therapy-text p {
-    font-size: 40px;
-    margin-bottom: 20px;
-  }
-  
+
   .therapy-text button {
-    padding: 30px 40px;
-    font-size: 20px;
-    background-color: blue;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    width: auto; /* Adjust button width for mobile */
   }
-  
-  .therapy-text button:hover {
-    background-color: darkblue;
-  }
-  
-  .therapy-image {
-    flex: 1;
-  }
-  
-  .therapy-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .therapy-section {
-      flex-direction: column;
-    }
-  
-    .therapy-image img {
-      max-width: 80%;
-      margin: 0 auto;
-    }
-  }
-  
+}
