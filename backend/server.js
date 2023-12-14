@@ -31,7 +31,6 @@ app.use((err, req, res, next) => {
 });
 
 app.post("/therapistData", async(req, res) => {
-  
   const {latitude,longitude} = req.body
   const options = {
     method: 'GET',
@@ -51,6 +50,7 @@ app.post("/therapistData", async(req, res) => {
   try {
     const response = await axios.request(options);
     const data = await response.data
+    console.log(response)
     res.json({
       message:'Data fetched successfully',
       data 
@@ -62,11 +62,41 @@ app.post("/therapistData", async(req, res) => {
 
 });
 
-app.get("/mockADHDData", (req, res) => {
-  res.json({
-    message: "Data Fetched successfully",
-    data: mockADHDData,
-  });
+app.post("/getResources", async(req, res) => {
+  const {resourceId} = req.body
+  
+  const options = {
+    method: 'POST',
+    url: 'https://newsnow.p.rapidapi.com/newsv2',
+    headers: {
+      'content-type': 'application/json',
+      'X-RapidAPI-Key': process.env.X_RAPIDAPI_ARTICLES_KEY,
+      'X-RapidAPI-Host': 'newsnow.p.rapidapi.com'
+    },
+    data: {
+      query: resourceId,
+      page: 1,
+      time_bounded: true,
+      from_date: '01/02/2021',
+      to_date: '05/06/2021',
+      location: '',
+      category: '',
+      source: ''
+    }
+  };
+  
+  try {
+    const response = await axios.request(options);
+    res.json({
+      message: "Data Fetched successfully",
+      data: response.data.news,
+    });
+  } catch (error) {
+    console.error(error);
+  }
+
+
+  
 });
 
 const port = process.env.PORT || 8000;

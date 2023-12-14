@@ -43,13 +43,25 @@ function ConditionDetailPage() {
   };
 
   React.useEffect(()=> {
-    axios.get("http://localhost:3001/mockADHDData")
-    .then((response) => {
-      setResourceData(JSON.parse(response.data.data));
-    })
-    .catch((error) => {
-      console.error(error);
-    })
+
+    const requestOptions = {
+      method: 'post',
+      url: `http://localhost:3001/getResources`,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: {
+        resourceId : conditionId
+      }
+    };  
+
+    axios(requestOptions)
+      .then(response => {
+        console.log(response)
+        setResourceData(response.data.data)
+      })
+      .catch(error => console.error(error));
+    
   },[])
 
 
