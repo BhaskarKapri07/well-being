@@ -9,6 +9,7 @@ function LoginPage() {
     password: "",
   });
   const navigate = useNavigate();
+  const [showInvalidCredentials,setShowInvalidCredentials] = React.useState(false)
 
   const handleChange = (e) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
@@ -25,6 +26,7 @@ function LoginPage() {
         }
       );
       console.log("Login successful:", response.data);
+      setShowInvalidCredentials(false)
       localStorage.setItem("token", response.data.token);
       navigate("/")
       window.location.reload()
@@ -33,6 +35,7 @@ function LoginPage() {
       //   navigate("/");
       // }, 1000);
     } catch (error) {
+      setShowInvalidCredentials(true)
       console.error(
         "Login error:",
         error.response ? error.response.data : error
@@ -65,6 +68,7 @@ function LoginPage() {
           onChange={handleChange}
           required autoComplete="current-password"
         />
+        {showInvalidCredentials && <p className="invalid-credentials">Invalid Credentials</p>}
         <button type="submit">Log In</button>
         <p className="register-link">
           Don't have an account?{" "}

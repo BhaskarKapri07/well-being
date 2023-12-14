@@ -15,6 +15,7 @@ import EveryEntry from "./components/EveryEntry/EveryEntry";
 import SingleNote from "./components/SingleNote/SingleNote";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 
+
 function App() {
   return (
     <Router>
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
+          
           <Route path="/register" element={<RegistrationPage />} />
           <Route path="/help" element={<TalkToAnExpert />} />
           <Route path="/resources" element={<ResourcesPage />} />
