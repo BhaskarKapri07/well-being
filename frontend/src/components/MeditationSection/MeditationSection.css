@@ -1,71 +1,98 @@
+/* Meditation Section Styles */
 .meditation-container {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 20px;
+  background-color: beige; /* Consistent background */
+  padding: 2em 0;
+  
 }
 
+/* Main Meditation Area */
 .main-meditation-area {
-  flex: 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  max-width: 40%;
-}
-
-.main-meditation-image {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  justify-content: center;
+  margin-bottom: 2em;
 }
 
 .meditation-quote {
-  font-size: 32px;
+  flex: 1; /* Allows the quote to grow */
+  max-width: 50%; /* Maximum width for the quote */
+  font-size: 2.1em; /* Larger font size for the quote */
+  color: #333333;
+  text-align: left; /* Left-align text */
+  margin-right: 20px; /* Space between quote and image */
   font-style: italic;
-  text-align: center;
-  border-left: 4px solid #ccc;
-  padding: 10px;
-  color: #141414;
 }
 
-.meditation-cards {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.meditation-card {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  text-decoration: none; /* Remove link styling */
-  color: inherit; /* Inherit text color */
-}
-
-.card-image {
-  width: 100px; /* Adjust as needed */
+.main-meditation-image {
+  flex: 0 0 40%; /* Fixed basis for the image */
+  max-width: 40%; /* Maximum width for the image */
   height: auto;
   border-radius: 8px;
 }
 
-.card-content {
-  flex-grow: 1;
+/* Meditation Cards */
+.meditation-cards {
+  display: flex;
+  justify-content: space-around; /* Distribute cards evenly */
+  flex-wrap: wrap; /* Allow wrapping for multiple cards */
 }
 
-@media screen and (max-width: 768px) {
-  .meditation-container {
+.meditation-card {
+  width: calc(100% / 5 - 1em); /* Equal width for cards */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: #333;
+  transition: box-shadow 0.3s, transform 0.3s; /* Transitions for hover effects */
+}
+
+.meditation-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  text-decoration: none;
+  background: peachpuff;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1em;
+}
+
+.card-content h3 {
+  color: #005f73; /* Title color */
+  transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.card-content p {
+  font-size: 0.9em;
+  color: #4a6670; /* Text color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-meditation-area {
     flex-direction: column;
+    text-align: center;
   }
 
-  .main-meditation-area {
+  .main-meditation-image,
+  .meditation-quote {
     max-width: 100%;
+    margin-right: 0;
   }
 
   .meditation-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .meditation-card {
     width: 100%;
   }
 }
