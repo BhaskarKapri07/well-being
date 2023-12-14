@@ -13,6 +13,8 @@ const EveryEntry = (props) => {
     const navigate = useNavigate()
 
 
+    
+
     useEffect(()=> {
         const requestOptions = {
           method:"get",

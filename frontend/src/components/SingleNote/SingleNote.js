@@ -19,6 +19,7 @@ const SingleNote = ({match}) => {
 
 
     React.useEffect(()=>{
+
         const requestOptions = {
             method:"get",
             url: `http://localhost:3001/api/journal/${noteId}`,
@@ -31,6 +32,8 @@ const SingleNote = ({match}) => {
         axios(requestOptions)
             .then(response => setNote(response.data))
             .catch(error => console.error(error))
+        
+       
     },[])
 
     const handleChange = (e) => {
@@ -38,8 +41,10 @@ const SingleNote = ({match}) => {
     }
 
     const updateNote = () => {
-        const requestOptions = {
-            method: 'put',
+        if(note.content && note.content){
+
+            const requestOptions = {
+                method: 'put',
             url: `http://localhost:3001/api/journal/${noteId}`,
             headers: {
               'Content-Type': 'application/json',
@@ -54,7 +59,10 @@ const SingleNote = ({match}) => {
           axios(requestOptions)
             .then(response => console.log(response.data))
             .catch(error => console.error(error));
-        navigate("/journal/allNotes")
+            navigate("/journal/allNotes")
+        }else{
+            console.log("Enter some data")
+        }
     }
 
     const deleteNote = () => {

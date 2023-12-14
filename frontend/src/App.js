@@ -13,6 +13,7 @@ import ConditionDetailPage from "./Pages/ConditionDetailPage/ConditionDetailPage
 import MeditationDetailPage from "./Pages/MeditationDetailPage/MeditationDetailPage";
 import EveryEntry from "./components/EveryEntry/EveryEntry";
 import SingleNote from "./components/SingleNote/SingleNote";
+import PageNotFound from "./components/PageNotFound/PageNotFound";
 
 function App() {
   return (
@@ -37,6 +38,8 @@ function App() {
             element={<SingleNote/>}
           />
           <Route path="/:meditationTitle" element={<MeditationDetailPage />} />
+          <Route path="*" element={<PageNotFound />} />
+
         </Routes>
       </main>
 
