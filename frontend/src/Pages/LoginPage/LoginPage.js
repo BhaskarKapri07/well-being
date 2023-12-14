@@ -9,13 +9,16 @@ function LoginPage() {
     password: "",
   });
   const navigate = useNavigate();
+  // State variable for invalid credentials flag
   const [showInvalidCredentials, setShowInvalidCredentials] =
     React.useState(false);
 
+      // Handle user input changes
   const handleChange = (e) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
   };
 
+    // Submit login form and handle response
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -26,16 +29,16 @@ function LoginPage() {
           password: loginData.password,
         }
       );
-      console.log("Login successful:", response.data);
+      
       setShowInvalidCredentials(false);
       localStorage.setItem("token", response.data.token);
+      
+        // Redirect to home page and reload
       navigate("/");
       window.location.reload();
-      // setInterval(() => {
-      //   // something to display here
-      //   navigate("/");
-      // }, 1000);
+      
     } catch (error) {
+      // Display invalid credentials message and log error
       setShowInvalidCredentials(true);
       console.error(
         "Login error:",
@@ -45,6 +48,7 @@ function LoginPage() {
     console.log(loginData);
   };
 
+    // Redirect to registration page
   const handleRegisterRedirect = () => {
     navigate("/register");
   };

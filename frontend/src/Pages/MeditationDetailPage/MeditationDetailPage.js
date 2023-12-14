@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import meditationData from "../../assets/data/meditationData.json";
 import "./MeditationDetailPage.css";
+
+// Import meditation images
 import MindfulMeditationImage from "../../assets/images/mindfulMeditation.avif";
 import SpiritualMeditationImage from "../../assets/images/SpiritualMeditation.jpg";
 import FocusedMeditationImage from "../../assets/images/focusedMeditation.jpg";
@@ -10,13 +12,20 @@ import MovementMeditationImage from "../../assets/images/movementMeditation.jpg"
 import MantraMediationImage from "../../assets/images/mantraMeditation.jpg";
 
 const MeditationDetailPage = () => {
+   // Scroll to top on page load
   useScrollToTop();
+
+   // Get the meditation title from URL params
   const { meditationTitle } = useParams();
+
+  // Find the corresponding meditation object from data
   const meditation = meditationData.find(
     (m) =>
       m.name.toLowerCase() === decodeURIComponent(meditationTitle).toLowerCase()
   );
 
+
+  // Function to choose the appropriate image based on meditation name
   const getImage = () => {
     switch (meditation.name) {
       case "Mindfulness Meditation":
@@ -34,6 +43,7 @@ const MeditationDetailPage = () => {
     }
   };
 
+  // Handle case where meditation is not found
   if (!meditation) {
     return <div>Meditation not found</div>;
   }

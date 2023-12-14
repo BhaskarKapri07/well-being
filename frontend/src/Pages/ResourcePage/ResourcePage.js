@@ -16,6 +16,8 @@ import bipolarImage from "../../assets/images/bipolar.jpg"
 
 function ResourcesPage() {
   const navigate = useNavigate();
+
+  // Define images object for quick access
   const images = {
     "adhd.png": adhdImage,
     "anxiety.png": anxietyImage,
@@ -28,10 +30,13 @@ function ResourcesPage() {
     "bipolar.png":bipolarImage
   };
 
+   // Function to handle "Read More" button click
   const handleReadMoreClick = (conditionName) => {
+     // Navigate to the specific condition page
     navigate(`/condition/${conditionName}`);
   };
 
+    // Scroll to top on page load
   useScrollToTop();
 
   return (

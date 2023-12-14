@@ -3,10 +3,12 @@ import { useNavigate } from "react-router-dom";
 import "./PanicButton.css";
 
 function PanicButton() {
+  // State variable to control overlay visibility
   const [showOverlay, setShowOverlay] = useState(false);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
   const navigate = useNavigate();
 
+   // Array of calming messages to display during panic attack
   const messages = [
     "Take a deep breath...",
     "Hold for a moment...",
@@ -20,6 +22,8 @@ function PanicButton() {
     "You're doing great, one step at a time...",
   ];
 
+
+   // Update message index with timer after each message display
   useEffect(() => {
     let timer;
     if (showOverlay && currentMessageIndex < messages.length) {
@@ -31,6 +35,7 @@ function PanicButton() {
     return () => clearTimeout(timer);
   }, [showOverlay, currentMessageIndex, messages.length]);
 
+   // Navigate to therapy page after displaying all messages
   useEffect(() => {
     if (currentMessageIndex === messages.length) {
       setShowOverlay(false);
@@ -39,6 +44,7 @@ function PanicButton() {
     }
   }, [currentMessageIndex, navigate, messages.length]);
 
+  // Handle button click to display calming messages and start timer
   const handlePanicClick = () => {
     setShowOverlay(true);
     setCurrentMessageIndex(0);
@@ -49,7 +55,7 @@ function PanicButton() {
       <button className="panic-button" onClick={handlePanicClick}>
         Are You Panicking?
       </button>
-
+          {/* Overlay containing calming messages */}
       {showOverlay && (
         <div className="calming-overlay">
           <p className="calming-message">{messages[currentMessageIndex]}</p>

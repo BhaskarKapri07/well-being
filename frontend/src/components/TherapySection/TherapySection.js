@@ -7,14 +7,17 @@ const TherapySection = () => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate("/help");
+    navigate("/therapy");
   };
 
   return (
     <div className="therapy-section">
+       {/* Image section */}
       <div className="therapy-image">
         <img src={therapistImage} alt="therapist" />
       </div>
+
+        {/* Text section with quote and button */}
       <div className="therapy-text">
         <p>
           "It takes courage to seek help, but it is a sign of strength, not

@@ -5,19 +5,24 @@ import axios from "axios";
 
 function RegistrationPage() {
   const navigate = useNavigate();
+
+    // State variable for user data
   const [userData, setUserData] = useState({
     username: "",
     email: "",
     password: "",
   });
 
+  // Handle changes in input fields
   const handleChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
 
+    // Submit registration form
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+       // Send POST request to register API
       const response = await axios.post(
         "https://well-being.onrender.com/api/users/register",
         {
@@ -26,11 +31,10 @@ function RegistrationPage() {
           password: userData.password,
         }
       );
-      console.log("User registered:", response.data);
-      setInterval(() => {
-        // something to display here
+      
+ 
         navigate("/login");
-      }, 1000);
+      
     } catch (error) {
       console.error(
         "Registration error:",
@@ -38,7 +42,7 @@ function RegistrationPage() {
       );
     }
 
-    console.log(userData);
+
   };
 
   return (
@@ -69,14 +73,7 @@ function RegistrationPage() {
           onChange={handleChange}
           required
         />
-        {/* <input
-          type="text"
-          name="emergencyContact"
-          placeholder="Emergency Contact"
-          value={userData.emergencyContact}
-          onChange={handleChange}
-          required
-        /> */}
+
         <button type="submit">Register</button>
       </form>
     </div>

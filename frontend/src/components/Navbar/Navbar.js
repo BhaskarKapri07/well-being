@@ -4,14 +4,17 @@ import logo from "../../assets/images/logo.png";
 import "./Navbar.css";
 
 function Navbar() {
+  // State variable to track logged in status
   const [loggedIn, setLoggedIn] = React.useState(false);
   const navigate = useNavigate();
 
+  // Check for existing token in local storage on mount
   React.useEffect(() => {
     const token = localStorage.getItem("token");
     setLoggedIn(!!token);
   }, []);
 
+   // Handle user logout logic and navigation
   const handleLogout = () => {
     // Implement your logout logic here, e.g., remove the token from local storage
     localStorage.removeItem("token");
@@ -29,6 +32,7 @@ function Navbar() {
         <NavLink to="/resources">Resources</NavLink>
         <NavLink to="/journal">Journal</NavLink>
         <NavLink to="/therapy">Talk to an Expert</NavLink>
+           {/* Display logout link if user is logged in, login link otherwise */}
         {loggedIn ? (
           <NavLink onClick={handleLogout}>Logout</NavLink>
         ) : (

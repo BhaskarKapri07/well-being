@@ -17,7 +17,10 @@ const JournalNote = () => {
 
   const onSave = (e) => {
     e.preventDefault();
+
+     // Check for user login before saving
     if (userToken) {
+      // Create API request options
       const requestOptions = {
         method: "post",
         url: `https://well-being.onrender.com/api/journal`,
@@ -31,17 +34,21 @@ const JournalNote = () => {
         },
       };
 
+          // Send API request to save the note
       axios(requestOptions)
         .then((response) => {
+             // Navigate to saved note page
           navigate(`allNotes/${response.data.entry._id}`);
           console.log(response.data);
         })
         .catch((error) => console.error(error));
     } else {
+          // Display user not logged in alert
       setShowUserNotLoggedInAlert(true);
     }
   };
 
+   // Handle input changes for note title and content
   const handleChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value });
   };
@@ -49,6 +56,8 @@ const JournalNote = () => {
   const handleUserNotLoggedInClick = () => {
     setShowUserNotLoggedInAlert(false);
   };
+
+    // Handle user clicking "View All Entries" button
 
   const viewAllEntries = () => {
     if (!userToken) {
@@ -58,6 +67,7 @@ const JournalNote = () => {
     }
   };
 
+    // Render user not logged in alert if necessary
   return (
     <form className="journal-note-container" onSubmit={(e) => onSave(e)}>
       <input

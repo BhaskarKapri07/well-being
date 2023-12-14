@@ -1,3 +1,6 @@
+
+
+// React and required libraries
 import React from "react";
 import locationLogo from "../../assets/images/location.jpg";
 import axios from "axios";
@@ -6,16 +9,18 @@ import "./TalkToAnExpert.css";
 
 
 
-
+// Functional component for TalkToAnExpert page
 const TalkToAnExpert = () => {
+    // State variables for therapists data, showing data, and loading
   const [therapistsData, setTherapistsData] = React.useState([]);
   const [showData,setShowData] = React.useState(false)
   
   
-  
+    // Function triggered on "Fetch Therapists" button click
   const handleClick = async() => {
     let location = {}
     
+      // Get user location using navigator API
     await navigator.geolocation.getCurrentPosition((position) => {
       location = {
         latitude: position.coords.latitude,
@@ -29,6 +34,8 @@ const TalkToAnExpert = () => {
     },"2000")
   };
 
+
+   // Function to fetch therapists data from API using user location
   const fetchTherapists = (location) => {
     const requestOptions = {
       method: "post",
@@ -51,6 +58,8 @@ const TalkToAnExpert = () => {
       .catch((error) => console.error(error));
   };
 
+
+    // Render therapists data elements
   const therapistsDataElements = therapistsData.map((data, index) => {
     return (
       <div className="single-therapist-container" key={index}>
@@ -63,7 +72,10 @@ const TalkToAnExpert = () => {
     );
   });
 
+
+  // Render different content based on data availability and loading state
   return !showData ? (
+     // Initial screen requesting location permission
     <div className="talk-to-expert-container">
       <img
         src={locationLogo}
@@ -80,6 +92,7 @@ const TalkToAnExpert = () => {
     </div>) 
     :
     (
+          // Display therapists data list
       <div className="therapists-container">
         {therapistsDataElements}
       </div>
