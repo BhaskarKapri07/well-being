@@ -15,7 +15,7 @@ const TalkToAnExpert = () => {
   
   const handleClick = async() => {
     let location = {}
-    // console.log("before fetching")
+    
     await navigator.geolocation.getCurrentPosition((position) => {
       location = {
         latitude: position.coords.latitude,
@@ -23,9 +23,8 @@ const TalkToAnExpert = () => {
       };
     });
 
-    // console.log("After use await api")
-    setTimeout(()=>{
-        
+    
+    setTimeout(()=>{    
         fetchTherapists(location)
     },"2000")
   };

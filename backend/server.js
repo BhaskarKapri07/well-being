@@ -32,12 +32,12 @@ app.use((err, req, res, next) => {
 
 app.post("/therapistData", async(req, res) => {
   const {latitude,longitude} = req.body
-
+  
   const options = {
     method: 'GET',
     url: 'https://map-places.p.rapidapi.com/nearbysearch/json',
     params: {
-      tion: `${latitude},${longitude}`,
+      location: `${latitude},${longitude}`,
       radius: '1500',
       keyword: 'therapist',
       type: 'clinic'
@@ -51,7 +51,7 @@ app.post("/therapistData", async(req, res) => {
   try {
     const response = await axios.request(options);
     const data = await response.data
-    // console.log(response)
+    
     res.json({
       message:'Data fetched successfully',
       data
