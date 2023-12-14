@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# Mental Wellbeing App - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Mental Wellbeing App frontend repository! This app is designed to promote mental wellness through various features such as meditation, articles on mental health conditions, and more. Here's a guide to get you started:
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Project Overview](#project-overview)
 
-### `npm start`
+- [Installation](#installation)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Usage](#usage)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Features](#features)
 
-### `npm test`
+- [Contributing](#contributing)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [License](#license)
 
-### `npm run build`
+## Project Overview
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Mental Wellbeing App is a web application that provides a range of tools and resources to support mental health. It includes:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Guided meditation sessions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Informational articles on various mental health conditions
 
-### `npm run eject`
+- Panic button for immediate assistance
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- User registration and login
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Journaling feature
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Meditation practice sessions
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Responsive design for mobile and desktop
 
-## Learn More
+## Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To run the frontend of the app locally, follow these steps:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone this repository to your local machine.
 
-### Code Splitting
+```sh
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+git clone <frontend-repo-url>
 
-### Analyzing the Bundle Size
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Navigate to the project directory.
 
-### Making a Progressive Web App
+```sh
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+cd mental-wellbeing-app-frontend
 
-### Advanced Configuration
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. Install the project dependencies.
 
-### Deployment
+```sh
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+npm install
 
-### `npm run build` fails to minify
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. Start the development server.
+
+```sh
+
+npm start
+
+```
+
+5. Open your web browser and go to http://localhost:3000 to access the app.
+   In case you are running the app on localhost, first start the server, and as this repository serves the purpose of hosting the web app online, change the link https://well-being.onrender.com to `https://localhost:{portName}`
+
+## Usage
+
+- Explore guided meditation sessions by clicking on the "Meditation" section.
+
+- Learn more about various mental health conditions in the "Resources" section.
+
+- Use the "Panic Button" for immediate relaxation techniques.
+
+- Register and log in to access the journaling feature.
+
+- Practice journaling to maintain a record of your thoughts and emotions.
+
+- Enjoy meditation practice sessions tailored to your preferences.
+
+## Features
+
+- Guided Meditation
+
+- Mental Health Articles
+
+- Panic Button
+
+- User Registration and Login
+
+- Journaling
+
+- Responsive Design
