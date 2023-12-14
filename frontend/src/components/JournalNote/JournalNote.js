@@ -6,7 +6,7 @@ import "./JournalNote.css"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import UserNotLoggedInAlert from "../UserNotLoggedInAlert/UserNotLoggedInAlert"
-import Toast from "../Toast/Toast"
+
 
 const JournalNote = () => {
 
@@ -15,7 +15,7 @@ const JournalNote = () => {
       content:""
     })
     const [showUserNotLoggedInAlert,setShowUserNotLoggedInAlert] = React.useState(false)
-    const [showSavedToast,setShowSavedToast] = React.useState(false)
+    
     const userToken = localStorage.getItem("token")
     const navigate = useNavigate()
     
@@ -39,7 +39,7 @@ const JournalNote = () => {
 
           axios(requestOptions)
             .then(response => {
-              setShowSavedToast(true)
+
               navigate(`allNotes/${response.data.entry._id}`)
               console.log(response.data)
             })
@@ -60,9 +60,7 @@ const JournalNote = () => {
         setShowUserNotLoggedInAlert(false)
       }
 
-      const handleToastRemove = () =>{
-        setShowSavedToast(false)
-      }
+     
 
       const viewAllEntries = () => {
         if(!userToken){
@@ -80,7 +78,7 @@ const JournalNote = () => {
         <button className="note-submit-btn" onClick={onSave} >Save</button>
         <button onClick={viewAllEntries}> View All Entries</button>   
         {showUserNotLoggedInAlert && <UserNotLoggedInAlert handleUserNotLoggedInClick={handleUserNotLoggedInClick}/>}
-        {showSavedToast && <Toast msg="Saved" handleToastRemove={handleToastRemove}/>}
+        
     </div>
     )
 }

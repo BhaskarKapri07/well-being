@@ -1,0 +1,56 @@
+
+
+.therapy-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 20px;
+  }
+  
+  .therapy-text {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .therapy-text p {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .therapy-text button {
+    padding: 30px 40px;
+    font-size: 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .therapy-text button:hover {
+    background-color: darkblue;
+  }
+  
+  .therapy-image {
+    flex: 1;
+  }
+  
+  .therapy-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .therapy-section {
+      flex-direction: column;
+    }
+  
+    .therapy-image img {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+  }
+  

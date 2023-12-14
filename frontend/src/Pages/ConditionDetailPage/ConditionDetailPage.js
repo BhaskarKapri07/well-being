@@ -66,8 +66,10 @@ function ConditionDetailPage() {
 
   return (
     <div>
-      
+      <div className='resource-banner-container'>
+      <div class="centered">{conditionId}</div>
       <img src={getImage(conditionId)} alt="resource-banner" className='resource-banner'/>
+      </div>
       <div className='resources-container'>
       {resourceElements}
       </div>
