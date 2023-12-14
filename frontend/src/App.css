@@ -1,0 +1,69 @@
+/* Main App container */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  background-color: #00b4d8;
+  color: white;
+  padding: 1em 0;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 2em;
+  width: 90%;
+  max-width: 800px; /* Maximum width for content area */
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  background-color: #0077b6;
+  color: white;
+  padding: 1em 0;
+  text-align: center;
+}
+
+/* Utility Classes */
+
+/* Centering elements horizontally and vertically */
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Spacing between sections */
+.section-spacing {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+/* Smaller text for secondary content */
+.small-text {
+  font-size: 0.8em;
+  color: #666;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .content {
+    padding: 1em;
+  }
+
+  .header,
+  .footer {
+    padding: 0.5em 0;
+    font-size: 1.2em;
+  }
+}

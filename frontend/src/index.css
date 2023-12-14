@@ -1,0 +1,79 @@
+/* Enhanced General Styles */
+
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  color: #4a6670; /* Updated text color */
+  background-color: #f9fafb; /* Lighter background */
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+a,
+button {
+  color: #0077b6;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+a:hover,
+button:hover {
+  color: #ff6b6c;
+  text-decoration: underline;
+}
+
+/* Interactive Button Styles */
+button {
+  background-color: transparent;
+  border: 2px solid #0077b6;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #0077b6;
+  color: white;
+}
+
+/* Utilizing Icons */
+.icon {
+  display: inline-block;
+  margin-right: 10px;
+  /* Add specific icon styles here */
+}
+
+/* Background Textures */
+.background-textured {
+  background-image: url("./assets/images/texture.png"); /* Use a subtle texture */
+  background-repeat: repeat;
+}
+
+/* Spacing and Layout */
+.section {
+  padding: 2em 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: smaller;
+  }
+}

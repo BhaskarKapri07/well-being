@@ -1,29 +1,55 @@
+/* Modern Navbar Styles */
 .navbar {
+  background-color: #f9fafb; /* Light background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 1rem;
-  background-color: #93dbc5;
-}
-
-.brand-name {
-  font-size: 1.5rem;
-  color: #333;
-  text-decoration: none;
-}
-
-.nav-links a {
-  margin-right: 15px;
-  text-decoration: none;
-  color: #333;
-}
-
-.active-link {
-  font-weight: bold;
+  padding: 1em 2em;
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 .navbar-logo {
+  height: 60px; /* Adjust as per your logo */
+  width: auto;
+  transition: transform 0.3s;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.1);
+}
+
+.nav-links {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  width: 150px;
+}
+
+.nav-links a {
+  color: #4a6670; /* Muted navy blue */
+  text-decoration: none;
+  margin-left: 20px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff6b6c; /* Soft coral for hover */
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1em;
+  }
+
+  .nav-links a {
+    margin-left: 0;
+    margin-bottom: 0.5em;
+  }
 }
