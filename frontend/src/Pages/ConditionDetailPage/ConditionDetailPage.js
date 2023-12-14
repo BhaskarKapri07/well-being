@@ -71,8 +71,8 @@ function ConditionDetailPage() {
 
 
 // Generate resource elements
-  const resourceElements = resourceData.map(data => {
-   return  <div className='single-resource-container' >
+  const resourceElements = resourceData.map((data,index) => {
+   return  <div key={index} className='single-resource-container' >
       <h1 className='resource-title'>{data.title}</h1>
       <p className='resource-body'> {data.body}</p>
       <p className='resource-source'>{data.source}</p>

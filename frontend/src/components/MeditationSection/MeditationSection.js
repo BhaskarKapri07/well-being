@@ -13,6 +13,7 @@ const MeditationSection = () => {
   const meditationQuote =
     "Meditation is not a way of making your mind quiet. It's a way of entering into the quiet that's already there.";
 
+    // Array of different meditation types with details
   const meditations = [
     {
       title: "Mindfulness Meditation",
@@ -48,6 +49,7 @@ const MeditationSection = () => {
 
   return (
     <div className="meditation-container">
+       {/* Main area with quote and image */}
       <div className="main-meditation-area">
         <blockquote className="meditation-quote">{meditationQuote}</blockquote>
         <img
@@ -56,6 +58,7 @@ const MeditationSection = () => {
           className="main-meditation-image"
         />
       </div>
+       {/* Cards section showcasing different meditation types */}
       <div className="meditation-cards">
         {meditations.map((meditation, index) => (
           <Link

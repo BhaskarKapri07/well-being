@@ -9,12 +9,14 @@ const EveryEntry = (props) => {
   const [allNotes, setAllNotes] = React.useState([]);
   const navigate = useNavigate();
 
+   // Ensure user is logged in before rendering
   useEffect(() => {
     if (!localStorage.getItem("token")) {
       navigate("/");
     }
   }, [userToken]);
 
+    // Fetch all notes data on component mount
   useEffect(() => {
     const requestOptions = {
       method: "get",
@@ -29,6 +31,8 @@ const EveryEntry = (props) => {
       .then((response) => setAllNotes(response.data))
       .catch((error) => console.error(error));
   }, []);
+
+    // Generate individual note elements for each item in allNotes array
 
   const notesElements = allNotes.map((note, index) => {
     return (

@@ -4,21 +4,28 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const SingleNote = ({ match }) => {
+
+    // Extract note ID from URL parameter
   const { noteId } = useParams();
+
+    // Retrieve user token from local storage
   const userToken = localStorage.getItem("token");
   const navigate = useNavigate();
 
+    // State variable to store note data
   const [note, setNote] = React.useState({
     title: "",
     content: "",
   });
 
+    // Redirect to login if user is not logged in
   React.useEffect(() => {
     if (!localStorage.getItem("token")) {
       navigate("/");
     }
   }, [userToken]);
 
+   // Fetch note data on component mount
   React.useEffect(() => {
     const requestOptions = {
       method: "get",
@@ -34,10 +41,12 @@ const SingleNote = ({ match }) => {
       .catch((error) => console.error(error));
   }, []);
 
+  // Handle changes in input fields
   const handleChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value });
   };
 
+    // Submit form to update note with API call
   const updateNote = () => {
     const requestOptions = {
       method: "put",
@@ -58,6 +67,7 @@ const SingleNote = ({ match }) => {
     navigate("/journal/allNotes");
   };
 
+// Delete note with API call and redirect back to list  
   const deleteNote = () => {
     const requestOptions = {
       method: "delete",
@@ -76,6 +86,7 @@ const SingleNote = ({ match }) => {
 
   return (
     <div>
+         {/* Form to edit note title and content */}
       <form className="journal-note-container" onSubmit={updateNote}>
         <input
           type="text"
