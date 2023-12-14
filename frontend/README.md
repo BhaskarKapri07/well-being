@@ -1,8 +1,8 @@
 # Mental Wellbeing App - Frontend
 
-[link to the deployed app](https://well-being-xi.vercel.app/)
+[link to the deployed app](https://well-being-nine.vercel.app/)
 
-Welcome to the Mental Wellbeing App frontend repository! This app is designed to promote mental wellness through various features such as meditation, articles on mental health conditions, and more. The frontend of the app has been deployed using `Vercel`, and the backend has been deployed using `Render` Here's a guide to get you started:
+Welcome to the Mental Wellbeing App frontend repository! This app is designed to promote mental wellness through various features such as meditation, articles on mental health conditions, and more. The frontend of the app has been deployed using `Vercel`, and the backend has been deployed using `Render`. Here's a guide to get you started:
 
 ## Table of Contents
 
