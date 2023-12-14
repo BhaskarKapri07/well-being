@@ -1,66 +1,74 @@
-
-
+/* Talk to an Expert Page Styles */
 .talk-to-expert-container {
-    /* background-color: pink; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* height: 100vh; */
+  padding: 2em;
+  text-align: center;
+  /* background-color: #f9fafb;  */
+  background: url('../../assets/images/texture5.jpg');
+}
+
+/* Location Logo Styling */
+.location-logo {
+  max-width: 200px; /* Adjust the size as needed */
+  height: auto;
+  margin-bottom: 1em;
+}
+
+/* Description Text and Button Styling */
+.talk-to-expert-container p {
+  font-size: 1.2em;
+  color: #333333; /* Consistent text color */
+  margin-bottom: 1em;
 }
 
 .permission-btn {
-    background-color: #007bff; /* Adjust the background color */
-    color: #fff;
-    cursor: pointer;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    outline:none;
-    margin-bottom: 10px;
+  background-color: #0077b6; /* Button color */
+  color: white;
+  border: none;
+  padding: 0.75em 1.5em;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .permission-btn:hover {
-    background-color: #0056b3;
+  background-color: #005f73; /* Darker shade on hover */
+  transform: translateY(-2px);
 }
 
-.location-logo {
-    height: auto;
+/* Therapist Data Container */
+.therapists-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1em;
 }
 
 .single-therapist-container {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 16px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-  }
-  
-  .therapist-clinic-name {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 8px;
-  }
-  
-  .therapist-vicinity {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 8px;
-  }
-  
-  .open-or-close {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #4caf50; /* Green for open, adjust color as needed */
-  }
-  
+  /* background-color: white; */
+  background: url('../../assets/images/texture5.jpg');
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  margin: 1em;
+  width: calc(33.33% - 2em); /* Three cards per row */
+  text-align: left;
+}
+
+.therapist-clinic-name, .therapist-vicinity, .open-or-close {
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  color: #333333; /* Consistent text color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .therapists-container {
-    display: flex;
     flex-direction: column;
-    justify-content: space-around; /* Adjust as needed for spacing */
-    padding: 20px;
-    background-color: #f8f8f8; /* Adjust background color as needed */
+    align-items: center;
   }
-  
+
+  .single-therapist-container {
+    width: 100%; /* Full width on smaller screens */
+  }
+}

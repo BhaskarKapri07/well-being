@@ -1,51 +1,77 @@
+/* Journal Page Styles */
+.journal-container {
+  padding: 2em;
+  background-color: #f9fafb; /* Consistent background color */
+  background: url("../../assets/images/texture.png")  ;
+  text-align: center;
+}
 
-  /* Additional styling for the text content within the day container */
-  
-  /* Style for the JournalNote component */
-  /* Adjust the styling based on your JournalNote component structure */
-  .journal-note-container {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
-  }
-  
-  /* Add any additional styling for your JournalNote component elements */
-  .journal-container {
-    display: flex;
+/* Container for Art and Quote */
+.journal-art-quote-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1200px; /* Adjust as needed */
+  margin: auto; /* Centering the container */
+}
+
+/* Journal Art Styling */
+.journal-art {
+  max-width: 40%; /* Adjusted size for the image */
+  height: auto;
+  border-radius: 8px;
+  margin-right: 20px; /* Space between image and quote */
+}
+
+/* Journal Quote Styling */
+.journal-quote {
+  max-width: 40%; /* Adjusted size for the quote */
+  font-size: 1.4em;
+  color: #333333; /* Text color */
+}
+
+/* Create Journal Note Button with Icon Image */
+.create-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0077b6; /* Button color */
+  color: #0077b6;
+  border: none;
+  padding: 0.75em 1.5em;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  text-align: center;
+  gap: 10px; /* Space between icon and text */
+
+  /* Icon styling */
+  background: url("../../assets/images/create-plus-icon.png") no-repeat left
+    10px center;
+  background-size: 20px 20px; /* Adjust icon size */
+  padding-left: 40px; /* Padding to accommodate the icon */
+}
+
+.create-icon-btn:hover {
+  background-color: #005f73; /* Darker shade on hover */
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .journal-art-quote-container {
     flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
+    align-items: center;
   }
 
-  .journal-art {
-    margin-top: 20px;
-    align-self: center;
-    max-width: 300px;
+  .journal-art,
+  .journal-quote {
+    max-width: 100%;
   }
 
-  .journal-quote{
-    align-self: center;
-      font-style: italic;
-      font-family: Garamond, serif;
-      font-size: 26px;
-      line-height: 1.5;
-      padding: 10px;
-      margin: 20px;
-      border-left: 3px solid #ddd;
-    
+  .create-icon-btn {
+    width: auto; /* Adjust button width for mobile */
   }
-
-  .create-icon-btn{
-    align-self: center;
-    background-image: url("../../assets/images/create-plus-icon.png");
-    background-size: cover;
-    background-repeat:no-repeat;
-    border: none;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-  }
+}

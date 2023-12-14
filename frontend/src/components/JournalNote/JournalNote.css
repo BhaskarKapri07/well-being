@@ -1,62 +1,78 @@
+/* Journal Note Container Styles */
 .journal-note-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    margin: 10px auto;
-    max-width: 500px;
-    
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  background-color: #f5f5dc; /* Beige background color */
+  width: 80%; /* Larger width to cover most of the page */
+  max-width: 800px; /* Maximum width */
+  margin: auto; /* Centering the form */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-  
-  .note-heading {
-    font-family: Arial, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    max-width: 200px;
-  }
-  
-  
-  .note-content {
-    border: none;
-    min-width: 200px;
-    font-family: Lato, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    width: 100%;
-    height: 150px;
-    resize: none;
-    padding: 10px;
-    border-radius: 3px;
-    border: 1px solid #ddd;
-    /* min-height: 150px; */
-    /* max-width: 300px; */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
-  }
-  
-  .note-submit-btn {
-    font-family: inherit;
-    background-color: #93dbc5;
-    color: #fff;
-    padding: 10px 20px;    
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: all 0.3s ease-in-out;
-  }
+/* Input Field Styling */
+.journal-note-container input[type="text"] {
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 1em; /* Space below input field */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px;
+  font-size: 1em;
+  background-color: #fff; /* White background for contrast */
+}
 
+/* Textarea Styling */
+.journal-note-container .note-content {
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 1em; /* Space below textarea */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  resize: vertical; /* Allows vertical resizing */
+  background-color: #fff; /* White background for contrast */
+  height: 300px; /* Larger height for ample writing space */
+}
 
-  
-  .note-submit-btn:hover {
-    background-color: #444;
+/* Submit Button Styling */
+.journal-note-container .note-submit-btn {
+  background-color: #0077b6; /* Button color */
+  color: white;
+  border: none;
+  padding: 0.75em 1.5em;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-bottom: 1em; /* Space below button */
+}
+
+.journal-note-container .note-submit-btn:hover {
+  background-color: #005f73; /* Darker shade on hover */
+  transform: translateY(-2px);
+}
+
+/* View All Entries Button Styling */
+.journal-note-container button:not(.note-submit-btn) {
+  background-color: #009688; /* Different color for contrast */
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.journal-note-container button:not(.note-submit-btn):hover {
+  background-color: #00796b; /* Darker shade on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .journal-note-container {
+    width: 95%; /* More width on smaller screens */
+    padding: 1em;
   }
-  
+}

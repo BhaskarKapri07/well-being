@@ -1,36 +1,49 @@
- .single-note-container {
-    /* background-color: red; */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* All Entries Container Styles */
+.all-notes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  background-color: #f9fafb; /* Consistent with the theme */
+}
+
+/* Single Note Container Styling */
+.single-note-container {
+  background-color: #fff8f0; /* Soft beige for a warm feel */
+  border: 1px solid #e7d4c5; /* Light border color */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5em;
+  margin-bottom: 1em; /* Space between entries */
+  width: 80%; /* Adjusted width */
+  max-width: 700px; /* Maximum width */
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.single-note-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Note Title Styling */
+.single-note-container .note-title {
+  font-size: 1.4em;
+  color: #005f73; /* Dark teal for title */
+  margin-bottom: 0.5em;
+}
+
+/* Note Content Styling */
+.single-note-container .note-content {
+  font-size: 1em;
+  color: #333333; /* Dark gray for content */
+  word-break: break-word; /* Ensure text wraps correctly */
+  line-height: 1.6; /* Improved line spacing for readability */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .single-note-container {
+    width: 95%; /* More width on smaller screens */
   }
-  
-  .note-title {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .note-content {
-    font-size: 1rem;
-    color: #555;
-  }
-  
-  .all-notes-container {
-    
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 20px;
-  }
-  
-  /* Optional: Add a media query for responsiveness */
-  @media (max-width: 768px) {
-    .all-notes-container {
-      justify-content: center;
-    }
-  }
-  
+}

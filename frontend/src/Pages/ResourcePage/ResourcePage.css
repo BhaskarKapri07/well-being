@@ -1,42 +1,76 @@
 .resources-page {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; /* Use space-around for even spacing */
-    padding: 20px;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centering items in the container */
+  padding: 20px;
+  background-color: #f9fafb; /* Consistent background color */
+}
+
+.condition-card {
+  flex: 0 0 30%; /* Flex grow, shrink, and basis set for each card */
+  margin: 10px; /* Margin around cards */
+  border: 1px solid #e7d4c5; /* Soft border color */
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff8f0; /* Soft beige background */
+  max-width: calc(30% - 20px); /* Maximum width considering margin */
+}
+
+.condition-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.condition-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px; /* Space below image */
+}
+
+.condition-card h3 {
+  color: #005f73; /* Dark teal for titles */
+  margin-bottom: 10px; /* Space below title */
+}
+
+.condition-card p {
+  color: #333333; /* Dark gray for text */
+  margin-bottom: 15px; /* Space above button */
+}
+
+.condition-card:hover {
+  background: peachpuff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.condition-card button {
+  background-color: #0077b6; /* Button color */
+  color: white;
+  border: none;
+  padding: 0.75em 1.5em;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.condition-card button:hover {
+  background-color: #005f73; /* Darker shade on hover */
+  transform: translateY(-2px);
+}
+
+@media (max-width: 992px) {
   .condition-card {
-    flex-basis: 30%; /* Set width for each card */
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 10px; /* Margin for spacing around cards */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-basis: calc(50% - 20px); /* Adjust for two items per row */
+    max-width: calc(50% - 20px);
   }
-  
-  .condition-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  .condition-card {
+    flex-basis: calc(100% - 20px); /* One item per row on very small screens */
+    max-width: calc(100% - 20px);
   }
-  
-  .condition-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  /* Adjustments for smaller screens */
-  @media (max-width: 992px) {
-    .condition-card {
-      flex-basis: 47%; /* Adjust for two items per row */
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .condition-card {
-      flex-basis: 100%; /* One item per row on very small screens */
-    }
-  }
-  
+}

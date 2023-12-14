@@ -47,7 +47,7 @@ function PanicButton() {
   return (
     <>
       <button className="panic-button" onClick={handlePanicClick}>
-        Panic Button
+        Are You Panicking?
       </button>
 
       {showOverlay && (
