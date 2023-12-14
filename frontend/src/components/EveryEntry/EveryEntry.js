@@ -18,6 +18,9 @@ const EveryEntry = (props) => {
 
     // Fetch all notes data on component mount
   useEffect(() => {
+    setInterval(()=>{
+
+    },"500")
     const requestOptions = {
       method: "get",
       url: `https://well-being.onrender.com/api/journal`,
