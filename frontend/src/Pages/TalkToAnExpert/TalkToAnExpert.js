@@ -8,6 +8,8 @@ const TalkToAnExpert = () => {
   const [therapistsData, setTherapistsData] = React.useState([]);
   const [showData,setShowData] = React.useState(false)
 
+  const userToken = localStorage.getItem("token")
+
 
   const handleClick = () => {
     

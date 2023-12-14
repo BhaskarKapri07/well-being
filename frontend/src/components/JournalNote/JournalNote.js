@@ -19,11 +19,9 @@ const JournalNote = () => {
     const userToken = localStorage.getItem("token")
     const navigate = useNavigate()
     
-    const onSave = () => {
+    const onSave = (e) => {
+        e.preventDefault()
         if(userToken){
-          if(note.title && note.content){
-
-          
           const requestOptions = {
             method: 'post',
             url: `http://localhost:3001/api/journal`,
@@ -39,14 +37,11 @@ const JournalNote = () => {
 
           axios(requestOptions)
             .then(response => {
-
               navigate(`allNotes/${response.data.entry._id}`)
               console.log(response.data)
             })
             .catch(error => console.error(error));
-          }else{
-            console.log("Enter some data ")
-          }
+          
         }else{
           setShowUserNotLoggedInAlert(true)
         }
@@ -72,14 +67,29 @@ const JournalNote = () => {
       }
 
     return (
-    <div className="journal-note-container">
-        <input type="text" placeholder="Title..." name="title" value={note.title} onChange={handleChange }/>
-        <textarea className="note-content" name="content" value={note.content} onChange={handleChange} id="content"  rows="4"  placeholder="Three things you are grateful for..."></textarea>        
-        <button className="note-submit-btn" onClick={onSave} >Save</button>
+    <form className="journal-note-container" onSubmit={(e)=>onSave(e)}>
+        <input 
+          type="text" 
+          placeholder="Title..." 
+          name="title" 
+          value={note.title} 
+          onChange={handleChange } 
+          required/>
+        
+        <textarea 
+          className="note-content" 
+          name="content" 
+          value={note.content} 
+          onChange={handleChange} 
+          id="content"  
+          rows="4"  
+          placeholder="Three things you are grateful for..." 
+          required></textarea>        
+        <button className="note-submit-btn" type="submit" >Save</button>
         <button onClick={viewAllEntries}> View All Entries</button>   
         {showUserNotLoggedInAlert && <UserNotLoggedInAlert handleUserNotLoggedInClick={handleUserNotLoggedInClick}/>}
         
-    </div>
+    </form>
     )
 }
 

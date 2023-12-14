@@ -11,6 +11,7 @@ import ResourcesPage from "./Pages/ResourcePage/ResourcePage";
 import JournalPage from "./Pages/JournalPage/JournalPage";
 import ConditionDetailPage from "./Pages/ConditionDetailPage/ConditionDetailPage";
 import MeditationDetailPage from "./Pages/MeditationDetailPage/MeditationDetailPage";
+import HelpPage from "./Pages/HelpPage/HelpPage";
 import EveryEntry from "./components/EveryEntry/EveryEntry";
 import SingleNote from "./components/SingleNote/SingleNote";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
@@ -27,7 +28,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           
           <Route path="/register" element={<RegistrationPage />} />
-          <Route path="/help" element={<TalkToAnExpert />} />
+          <Route path="/therapy" element={<TalkToAnExpert />} />
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/journal" element={<JournalPage />} />
           <Route path="/journal/allNotes" element={<EveryEntry />} />
