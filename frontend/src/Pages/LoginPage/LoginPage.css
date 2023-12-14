@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Fjalla+One&display=swap");
 
 .login-container {
-  background-color: rgb(116, 249, 205);
+  background-color: beige;
   background-size: cover;
   width: 100vw;
   height: 100vh;
@@ -76,7 +76,45 @@
   text-decoration: none;
 }
 
-
 .invalid-credentials {
   text-align: center;
+}
+
+/* Tablet View */
+@media (max-width: 768px) {
+  .login-form {
+    padding: 40px 50px;
+  }
+
+  .login-form input,
+  .login-form button {
+    font-size: 12pt;
+    line-height: 24pt; /* 12pt * 2 */
+  }
+
+  .register-link {
+    font-size: 11pt;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 480px) {
+  .login-form {
+    padding: 20px 30px;
+  }
+
+  .login-form input {
+    font-size: 10pt;
+    line-height: 20pt; /* 10pt * 2 */
+    margin-bottom: 20pt; /* 10pt * 2 */
+  }
+
+  .login-form button {
+    line-height: 20pt; /* 10pt * 2 */
+    padding: 0 15px;
+  }
+
+  .register-link {
+    font-size: 9pt;
+  }
 }

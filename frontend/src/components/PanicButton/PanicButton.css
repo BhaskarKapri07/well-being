@@ -1,9 +1,11 @@
+/* Panic Button Styles */
 .panic-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
   padding: 10px 20px;
   background-color: #f00;
+  font-size: 1.2em;
   color: white;
   border: none;
   border-radius: 5px;
@@ -11,6 +13,7 @@
   z-index: 1000;
 }
 
+/* Calming Overlay Styles */
 .calming-overlay {
   position: fixed;
   top: 0;
@@ -19,7 +22,7 @@
   bottom: 0;
   background: linear-gradient(-45deg, #e3ffe7, #d9e7ff, #ffd1ff, #ffafbd);
   background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
+  animation: gradientBG 30s ease infinite;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,21 +31,30 @@
   animation: fadeIn 1s forwards;
 }
 
+/* Animation for Background Gradient */
 @keyframes gradientBG {
-  0% {background-position: 0% 50%}
-  25% {background-position: 100% 50%}
-  50% {background-position: 100% 50%}
-  75% {background-position: 0% 50%}
-  100% {background-position: 0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
+/* Animation for Fade In */
 @keyframes fadeIn {
-  to {opacity: 1;}
+  to {
+    opacity: 1;
+  }
 }
 
+/* Calming Message Styles */
 .calming-message {
   color: #333;
-  font-size: 24px;
+  font-size: calc(12px + 1vw);
   text-align: center;
   padding: 20px;
   max-width: 600px;
@@ -50,4 +62,32 @@
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: textFadeIn 1s ease;
+}
+
+/* Animation for Text Fade In */
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Close Button Styles */
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 5px 10px;
+  background-color: #fff;
+  color: #333;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
