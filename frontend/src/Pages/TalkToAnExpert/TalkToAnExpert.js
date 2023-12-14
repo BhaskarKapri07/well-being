@@ -12,7 +12,7 @@ const TalkToAnExpert = () => {
   const [showData,setShowData] = React.useState(false)
   
   
-  const userToken = localStorage.getItem("token")
+  
   const handleClick = async() => {
     let location = {}
     // console.log("before fetching")
@@ -85,7 +85,7 @@ const TalkToAnExpert = () => {
         {therapistsDataElements}
       </div>
     )
-  );
+  
 };
 
 export default TalkToAnExpert;
