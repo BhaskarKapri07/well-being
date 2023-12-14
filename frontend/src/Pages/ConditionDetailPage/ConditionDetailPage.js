@@ -46,7 +46,7 @@ function ConditionDetailPage() {
 
     const requestOptions = {
       method: 'post',
-      url: `http://localhost:3001/getResources`,
+      url: `https://well-being.onrender.com/getResources`,
       headers: {
         'Content-Type': 'application/json',
       },

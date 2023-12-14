@@ -37,7 +37,7 @@ app.post("/therapistData", async(req, res) => {
     method: 'GET',
     url: 'https://map-places.p.rapidapi.com/nearbysearch/json',
     params: {
-      location: `${latitude},${longitude}`,
+      tion: `${latitude},${longitude}`,
       radius: '1500',
       keyword: 'therapist',
       type: 'clinic'

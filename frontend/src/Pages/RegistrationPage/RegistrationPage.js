@@ -19,7 +19,7 @@ function RegistrationPage() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/users/register",
+        "https://well-being.onrender.com/api/users/register",
         {
           username: userData.username,
           email:userData.email,

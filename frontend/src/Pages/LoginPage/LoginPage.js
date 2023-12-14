@@ -9,7 +9,8 @@ function LoginPage() {
     password: "",
   });
   const navigate = useNavigate();
-  const [showInvalidCredentials,setShowInvalidCredentials] = React.useState(false)
+  const [showInvalidCredentials, setShowInvalidCredentials] =
+    React.useState(false);
 
   const handleChange = (e) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
@@ -19,23 +20,23 @@ function LoginPage() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/users/login",
+        "https://well-being.onrender.com/api/users/login",
         {
           email: loginData.email,
           password: loginData.password,
         }
       );
       console.log("Login successful:", response.data);
-      setShowInvalidCredentials(false)
+      setShowInvalidCredentials(false);
       localStorage.setItem("token", response.data.token);
-      navigate("/")
-      window.location.reload()
+      navigate("/");
+      window.location.reload();
       // setInterval(() => {
       //   // something to display here
       //   navigate("/");
       // }, 1000);
     } catch (error) {
-      setShowInvalidCredentials(true)
+      setShowInvalidCredentials(true);
       console.error(
         "Login error:",
         error.response ? error.response.data : error
@@ -58,7 +59,8 @@ function LoginPage() {
           placeholder="Email"
           value={loginData.email}
           onChange={handleChange}
-          required autoComplete="current-email"
+          required
+          autoComplete="current-email"
         />
         <input
           type="password"
@@ -66,9 +68,12 @@ function LoginPage() {
           placeholder="Password"
           value={loginData.password}
           onChange={handleChange}
-          required autoComplete="current-password"
+          required
+          autoComplete="current-password"
         />
-        {showInvalidCredentials && <p className="invalid-credentials">Invalid Credentials</p>}
+        {showInvalidCredentials && (
+          <p className="invalid-credentials">Invalid Credentials</p>
+        )}
         <button type="submit">Log In</button>
         <p className="register-link">
           Don't have an account?{" "}
