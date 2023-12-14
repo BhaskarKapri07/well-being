@@ -17,6 +17,13 @@ const SingleNote = ({match}) => {
         content:""
     })
 
+    React.useEffect(()=>{
+        if(!localStorage.getItem("token")){
+            navigate("/")
+        }
+    },[userToken])
+    
+
 
     React.useEffect(()=>{
 

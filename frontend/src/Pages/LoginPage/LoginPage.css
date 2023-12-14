@@ -75,3 +75,8 @@
   color: #f03598;
   text-decoration: none;
 }
+
+
+.invalid-credentials {
+  text-align: center;
+}

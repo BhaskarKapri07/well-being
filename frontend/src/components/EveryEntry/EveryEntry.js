@@ -12,7 +12,11 @@ const EveryEntry = (props) => {
     const [allNotes,setAllNotes] = React.useState([])
     const navigate = useNavigate()
 
-
+    useEffect(()=>{
+        if(!localStorage.getItem("token")){
+            navigate("/")
+        }
+    },[userToken])
     
 
     useEffect(()=> {

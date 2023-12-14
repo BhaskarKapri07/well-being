@@ -18,7 +18,7 @@ function Navbar() {
     // Implement your logout logic here, e.g., remove the token from local storage
     localStorage.removeItem("token");
     setLoggedIn(false);
-    navigate("/")
+    navigate("/login")
   };
 
 
