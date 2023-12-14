@@ -17,6 +17,7 @@ import SingleNote from "./components/SingleNote/SingleNote";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 
 
+
 function App() {
   return (
     <Router>
@@ -27,6 +28,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           
+          
           <Route path="/register" element={<RegistrationPage />} />
           <Route path="/therapy" element={<TalkToAnExpert />} />
           <Route path="/resources" element={<ResourcesPage />} />
@@ -36,6 +38,8 @@ function App() {
             path="/condition/:conditionId"
             element={<ConditionDetailPage />}
           />
+
+
           <Route 
             path="/journal/allNotes/:noteId"
             element={<SingleNote/>}

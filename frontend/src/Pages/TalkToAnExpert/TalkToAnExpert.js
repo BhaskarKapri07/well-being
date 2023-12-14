@@ -3,26 +3,30 @@ import locationLogo from "../../assets/images/location.jpg";
 import axios from "axios";
 import "./TalkToAnExpert.css";
 
+
+
+
+
 const TalkToAnExpert = () => {
   const [therapistsData, setTherapistsData] = React.useState([]);
-  const [showData, setShowData] = React.useState(false);
-
-  const userToken = localStorage.getItem("token");
-  const handleClick = async () => {
-    let location = {};
-    // console.log("before fetching")
+  const [showData,setShowData] = React.useState(false)
+  
+  
+  
+  const handleClick = async() => {
+    let location = {}
+    
     await navigator.geolocation.getCurrentPosition((position) => {
       location = {
         latitude: position.coords.latitude,
         longitude: position.coords.longitude,
       };
-      // console.log("After updating")
     });
 
-    // console.log("After use await api")
-    setTimeout(() => {
-      fetchTherapists(location);
-    }, "2000");
+    
+    setTimeout(()=>{    
+        fetchTherapists(location)
+    },"2000")
   };
 
   const fetchTherapists = (location) => {
@@ -39,8 +43,8 @@ const TalkToAnExpert = () => {
     };
 
     axios(requestOptions)
-      .then((response) => {
-        console.log(response);
+      .then(response => {
+        console.log(response)
         setTherapistsData(response.data.data.results);
         setShowData(true);
       })
@@ -72,10 +76,16 @@ const TalkToAnExpert = () => {
       <button onClick={handleClick} className="permission-btn">
         Fetch Therapists
       </button>
-    </div>
-  ) : (
-    <div className="therapists-container">{therapistsDataElements}</div>
-  );
+      
+    </div>) 
+    :
+    (
+      <div className="therapists-container">
+        {therapistsDataElements}
+      </div>
+    )
+  
 };
 
 export default TalkToAnExpert;
+
