@@ -1,4 +1,4 @@
-@host = http://localhost:3001
+@host = https://well-being.onrender.com
 @token = # JWT token from login response
 
 

@@ -20,7 +20,7 @@ const JournalNote = () => {
     if (userToken) {
       const requestOptions = {
         method: "post",
-        url: `http://localhost:3001/api/journal`,
+        url: `https://well-being.onrender.com/api/journal`,
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${userToken}`,

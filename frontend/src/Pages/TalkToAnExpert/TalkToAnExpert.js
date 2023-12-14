@@ -3,19 +3,13 @@ import locationLogo from "../../assets/images/location.jpg";
 import axios from "axios";
 import "./TalkToAnExpert.css";
 
-
-
-
-
 const TalkToAnExpert = () => {
-  
   const [therapistsData, setTherapistsData] = React.useState([]);
-  const [showData,setShowData] = React.useState(false)
-  
-  
-  const userToken = localStorage.getItem("token")
-  const handleClick = async() => {
-    let location = {}
+  const [showData, setShowData] = React.useState(false);
+
+  const userToken = localStorage.getItem("token");
+  const handleClick = async () => {
+    let location = {};
     // console.log("before fetching")
     await navigator.geolocation.getCurrentPosition((position) => {
       location = {
@@ -26,50 +20,47 @@ const TalkToAnExpert = () => {
     });
 
     // console.log("After use await api")
-    setTimeout(()=>{
-        
-        fetchTherapists(location)
-    },"2000")
+    setTimeout(() => {
+      fetchTherapists(location);
+    }, "2000");
   };
 
   const fetchTherapists = (location) => {
-    
     const requestOptions = {
-      method: 'post',
-      url: `http://localhost:3001/therapistData`,
+      method: "post",
+      url: `https://well-being.onrender.com/therapistData`,
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       data: {
         latitude: location.latitude,
-        longitude: location.longitude
-      }
-    };  
-
+        longitude: location.longitude,
+      },
+    };
 
     axios(requestOptions)
-      .then(response => {
-        console.log(response)
+      .then((response) => {
+        console.log(response);
         setTherapistsData(response.data.data.results);
-        setShowData(true)
+        setShowData(true);
       })
-      .catch(error => console.error(error));
-    
-  }
+      .catch((error) => console.error(error));
+  };
 
-  const therapistsDataElements = therapistsData.map((data,index) => {
-    
+  const therapistsDataElements = therapistsData.map((data, index) => {
     return (
       <div className="single-therapist-container" key={index}>
         <h1 className="therapist-clinic-name">Name : {data.name}</h1>
         <p className="therapist-vicinity">Vicinity : {data.vicinity}</p>
-        <p className="open-or-close">{data.opening_hours ? "Open" : "Closed"}</p>
+        <p className="open-or-close">
+          {data.opening_hours ? "Open" : "Closed"}
+        </p>
       </div>
-    )
-  })
+    );
+  });
 
-  return (!showData ?
-    (<div className="talk-to-expert-container">
+  return !showData ? (
+    <div className="talk-to-expert-container">
       <img
         src={locationLogo}
         className="location-logo"
@@ -81,14 +72,9 @@ const TalkToAnExpert = () => {
       <button onClick={handleClick} className="permission-btn">
         Fetch Therapists
       </button>
-      
-    </div>) 
-    :
-    (
-      <div className="therapists-container">
-        {therapistsDataElements}
-      </div>
-    )
+    </div>
+  ) : (
+    <div className="therapists-container">{therapistsDataElements}</div>
   );
 };
 
