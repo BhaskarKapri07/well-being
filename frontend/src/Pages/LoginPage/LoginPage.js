@@ -45,7 +45,6 @@ function LoginPage() {
         error.response ? error.response.data : error
       );
     }
-    console.log(loginData);
   };
 
     // Redirect to registration page
