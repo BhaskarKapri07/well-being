@@ -31,7 +31,7 @@ function Navbar() {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/resources">Resources</NavLink>
         <NavLink to="/journal">Journal</NavLink>
-        <NavLink to="/help">Talk to an Expert</NavLink>
+        <NavLink to="/therapy">Talk to an Expert</NavLink>
         {loggedIn ? <NavLink onClick={handleLogout}>LogOut</NavLink> : <NavLink to="/login">LogIn</NavLink> }
       </div>
     </nav>
