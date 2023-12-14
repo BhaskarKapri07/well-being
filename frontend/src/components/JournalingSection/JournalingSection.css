@@ -1,53 +1,64 @@
+/* Journaling Section Styles with Image on Left */
 .journaling-section {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 40px;
-  gap: 20px;
-}
-
-.journaling-text {
-  flex: 1;
-  text-align: left;
-}
-
-.journaling-text p {
-  font-size: 40px;
-  margin-bottom: 20px;
-}
-
-.journaling-text button {
-  padding: 30px 40px;
-  font-size: 20px;
-  background-color: blue;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.journaling-text button:hover {
-  background-color: darkblue;
+  justify-content: space-around;
+  padding: 3em 0;
+  background-color: #f9fafb; /* Consistent background */
+  background: url('../../assets/images/texture5.jpg');
 }
 
 .journaling-image {
   flex: 1;
+  max-width: 45%;
+  order: 1; /* Image first */
 }
 
 .journaling-image img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 8px; /* Soften edges */
 }
 
-/* Responsive Design */
+.journaling-text {
+  flex: 1;
+  max-width: 45%;
+  order: 2; /* Text second */
+  padding: 1em;
+}
+
+.journaling-text p {
+  font-size: 2.1em;
+  color: #333333; /* Darker for readability */
+  margin-bottom: 1em;
+  line-height: 1.5; /* Improved line spacing */
+  font-style: italic;
+}
+
+.journaling-text button {
+  background-color: #0077b6; /* Theme color */
+  color: white;
+  border: none;
+  padding: 0.75em 1.5em;
+  border-radius: 5px;
+  font-size: 1.7em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.journaling-text button:hover {
+  background-color: #005f73; /* Darker shade on hover */
+  transform: translateY(-2px);
+}
+
+/* Responsive Design for smaller screens */
 @media (max-width: 768px) {
   .journaling-section {
-    flex-direction: column;
+    flex-direction: column-reverse; /* Image above text */
+    text-align: center;
   }
 
-  .journaling-image img {
-    max-width: 80%;
-    margin: 0 auto;
+  .journaling-text, .journaling-image {
+    max-width: 100%;
   }
 }

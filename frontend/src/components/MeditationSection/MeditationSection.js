@@ -36,7 +36,7 @@ const MeditationSection = () => {
       title: "Movement Meditation",
       description:
         "This practice may include walking through the woods, gardening, qigong, and other gentle forms of motion.",
-      image: MovementMeditationImage,
+      image: meditationImage,
     },
     {
       title: "Mantra Meditation",
@@ -49,12 +49,12 @@ const MeditationSection = () => {
   return (
     <div className="meditation-container">
       <div className="main-meditation-area">
+        <blockquote className="meditation-quote">{meditationQuote}</blockquote>
         <img
-          src={meditationImage}
+          src={MovementMeditationImage}
           alt="Meditation"
           className="main-meditation-image"
         />
-        <blockquote className="meditation-quote">{meditationQuote}</blockquote>
       </div>
       <div className="meditation-cards">
         {meditations.map((meditation, index) => (
