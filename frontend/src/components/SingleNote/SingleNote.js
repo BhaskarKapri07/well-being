@@ -48,7 +48,7 @@ const SingleNote = ({match}) => {
     }
 
     const updateNote = () => {
-        if(note.content && note.content){
+        
 
             const requestOptions = {
                 method: 'put',
@@ -67,9 +67,7 @@ const SingleNote = ({match}) => {
             .then(response => console.log(response.data))
             .catch(error => console.error(error));
             navigate("/journal/allNotes")
-        }else{
-            console.log("Enter some data")
-        }
+        
     }
 
     const deleteNote = () => {
@@ -90,12 +88,27 @@ const SingleNote = ({match}) => {
 
     return  (
         <div>
-            <div className="journal-note-container">
-                <input type="text" placeholder="Title..." name="title" value={note.title} onChange={handleChange }/>
-                <textarea className="note-content" name="content" value={note.content} onChange={handleChange} id="content"  rows="4"  placeholder="Three things you are grateful for..."></textarea>        
-                <button className="note-submit-btn" onClick={updateNote} >Modify</button>
+            <form className="journal-note-container" onSubmit={updateNote}>
+                <input 
+                    type="text" 
+                    placeholder="Title..." 
+                    name="title" 
+                    value={note.title} 
+                    onChange={handleChange } 
+                    required autoComplete="current-title"/>
+                <textarea 
+                    className="note-content" 
+                    name="content" 
+                    value={note.content} 
+                    onChange={handleChange} 
+                    id="content"  
+                    rows="4"  
+                    placeholder="Three things you are grateful for..." 
+                    required autoComplete="current-content">
+                </textarea>        
+                <button className="note-submit-btn" type="submit" >Modify</button>
                 <button className="note-delete" onClick={deleteNote}> Delete</button>
-            </div>    
+            </form>    
         </div>
     )
 }

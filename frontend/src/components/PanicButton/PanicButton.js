@@ -35,7 +35,7 @@ function PanicButton() {
     if (currentMessageIndex === messages.length) {
       setShowOverlay(false);
       setCurrentMessageIndex(0);
-      setTimeout(() => navigate("/help"), 500); // Delaying navigation
+      setTimeout(() => navigate("/therapy"), 500); // Delaying navigation
     }
   }, [currentMessageIndex, navigate, messages.length]);
 
