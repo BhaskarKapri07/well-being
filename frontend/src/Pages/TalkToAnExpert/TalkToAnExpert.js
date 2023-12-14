@@ -3,14 +3,16 @@ import locationLogo from "../../assets/images/location.jpg";
 import axios from "axios";
 import "./TalkToAnExpert.css";
 
+
+
+
 const TalkToAnExpert = () => {
   const [userLocation, setUserLocation] = React.useState({});
   const [therapistsData, setTherapistsData] = React.useState([]);
   const [showData,setShowData] = React.useState(false)
-
+  
+  
   const userToken = localStorage.getItem("token")
-
-
   const handleClick = () => {
     
     navigator.geolocation.getCurrentPosition((position) => {
@@ -20,16 +22,28 @@ const TalkToAnExpert = () => {
       });
     });
 
-    axios.get("http://localhost:3001/mockTherapistData")
-    .then((response) => {
-      setTherapistsData(JSON.parse(response.data.data).results);
-      setShowData(true)
-    })
-    .catch((error) => {
-      console.error(error);
-    })
-  };
 
+    const requestOptions = {
+      method: 'post',
+      url: `http://localhost:3001/therapistData`,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: {
+        latitude: userLocation.latitude,
+        longitude: userLocation.longitude
+      }
+    };  
+
+    axios(requestOptions)
+      .then(response => {
+        console.log(response)
+        setTherapistsData(response.data.data.results);
+        setShowData(true)
+      })
+      .catch(error => console.error(error));
+    
+  };
 
 
   const therapistsDataElements = therapistsData.map((data,index) => {
